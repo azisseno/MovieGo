@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		105DA5952143F36600056EB5 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA58F2143F35400056EB5 /* Storage.framework */; };
+		105DA5962143F36600056EB5 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA58F2143F35400056EB5 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		105DA5A32143F3B700056EB5 /* Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5A12143F3B400056EB5 /* Api.framework */; };
+		105DA5A42143F3B700056EB5 /* Api.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5A12143F3B400056EB5 /* Api.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86202143AAB90080EFAC /* AppDelegate.swift */; };
 		106D86232143AAB90080EFAC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86222143AAB90080EFAC /* ViewController.swift */; };
 		106D86262143AAB90080EFAC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D86242143AAB90080EFAC /* Main.storyboard */; };
-		106D86292143AAB90080EFAC /* MovieGo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 106D86272143AAB90080EFAC /* MovieGo.xcdatamodeld */; };
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
 		106D86392143AAB90080EFAC /* MovieGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86382143AAB90080EFAC /* MovieGoTests.swift */; };
+		618840141559ADB78B121EAC /* Pods_MovieGoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,13 +31,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		105DA5942143F36200056EB5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				105DA5962143F36600056EB5 /* Storage.framework in Embed Frameworks */,
+				105DA5A42143F3B700056EB5 /* Api.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGoTests/Pods-MovieGoTests.release.xcconfig"; sourceTree = "<group>"; };
 		031371DF275CAEB9CA6DDAA6 /* Pods-MovieGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.debug.xcconfig"; sourceTree = "<group>"; };
+		105DA5572143EE2300056EB5 /* MovieGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieGo.entitlements; sourceTree = "<group>"; };
+		105DA58F2143F35400056EB5 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		105DA5A12143F3B400056EB5 /* Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D861D2143AAB80080EFAC /* MovieGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D86202143AAB90080EFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		106D86222143AAB90080EFAC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		106D86252143AAB90080EFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		106D86282143AAB90080EFAC /* MovieGo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieGo.xcdatamodel; sourceTree = "<group>"; };
 		106D862A2143AAB90080EFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		106D862D2143AAB90080EFAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		106D862F2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,6 +64,7 @@
 		106D863A2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGoTests/Pods-MovieGoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -51,6 +74,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */,
+				105DA5952143F36600056EB5 /* Storage.framework in Frameworks */,
+				105DA5A32143F3B700056EB5 /* Api.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +83,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				618840141559ADB78B121EAC /* Pods_MovieGoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		105DA5512143EA5C00056EB5 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				106D86202143AAB90080EFAC /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		106D86142143AAB80080EFAC = {
 			isa = PBXGroup;
 			children = (
@@ -87,13 +121,13 @@
 		106D861F2143AAB80080EFAC /* MovieGo */ = {
 			isa = PBXGroup;
 			children = (
-				106D86202143AAB90080EFAC /* AppDelegate.swift */,
+				105DA5572143EE2300056EB5 /* MovieGo.entitlements */,
+				105DA5512143EA5C00056EB5 /* Application */,
 				106D86222143AAB90080EFAC /* ViewController.swift */,
 				106D86242143AAB90080EFAC /* Main.storyboard */,
 				106D862A2143AAB90080EFAC /* Assets.xcassets */,
 				106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */,
 				106D862F2143AAB90080EFAC /* Info.plist */,
-				106D86272143AAB90080EFAC /* MovieGo.xcdatamodeld */,
 			);
 			path = MovieGo;
 			sourceTree = "<group>";
@@ -112,6 +146,8 @@
 			children = (
 				031371DF275CAEB9CA6DDAA6 /* Pods-MovieGo.debug.xcconfig */,
 				FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */,
+				F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */,
+				029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -119,6 +155,8 @@
 		E9BD66EACEF7782C53AAD89E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				105DA5A12143F3B400056EB5 /* Api.framework */,
+				105DA58F2143F35400056EB5 /* Storage.framework */,
 				686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */,
 				7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */,
 			);
@@ -136,7 +174,7 @@
 				106D86192143AAB80080EFAC /* Sources */,
 				106D861A2143AAB80080EFAC /* Frameworks */,
 				106D861B2143AAB80080EFAC /* Resources */,
-				26D1B52858DD798AF2BFAB2E /* [CP] Embed Pods Frameworks */,
+				105DA5942143F36200056EB5 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 106D86402143AAB90080EFAC /* Build configuration list for PBXNativeTarget "MovieGoTests" */;
 			buildPhases = (
+				A92DF742F0D307C497960922 /* [CP] Check Pods Manifest.lock */,
 				106D86302143AAB90080EFAC /* Sources */,
 				106D86312143AAB90080EFAC /* Frameworks */,
 				106D86322143AAB90080EFAC /* Resources */,
@@ -177,6 +216,11 @@
 				TargetAttributes = {
 					106D861C2143AAB80080EFAC = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					106D86332143AAB90080EFAC = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -224,24 +268,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		26D1B52858DD798AF2BFAB2E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		34A1B28EEC7DAFE4ACD0B6DE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -260,6 +286,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A92DF742F0D307C497960922 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MovieGoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -269,7 +313,6 @@
 			files = (
 				106D86232143AAB90080EFAC /* ViewController.swift in Sources */,
 				106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */,
-				106D86292143AAB90080EFAC /* MovieGo.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +473,7 @@
 			baseConfigurationReference = 031371DF275CAEB9CA6DDAA6 /* Pods-MovieGo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MovieGo/MovieGo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TK32MKP4J;
 				INFOPLIST_FILE = MovieGo/Info.plist;
@@ -450,6 +494,7 @@
 			baseConfigurationReference = FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MovieGo/MovieGo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TK32MKP4J;
 				INFOPLIST_FILE = MovieGo/Info.plist;
@@ -467,6 +512,7 @@
 		};
 		106D86412143AAB90080EFAC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +534,7 @@
 		};
 		106D86422143AAB90080EFAC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -538,19 +585,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		106D86272143AAB90080EFAC /* MovieGo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				106D86282143AAB90080EFAC /* MovieGo.xcdatamodel */,
-			);
-			currentVersion = 106D86282143AAB90080EFAC /* MovieGo.xcdatamodel */;
-			path = MovieGo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 106D86152143AAB80080EFAC /* Project object */;
 }
