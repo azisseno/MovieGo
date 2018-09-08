@@ -14,6 +14,7 @@
 		105DA5AE214401C300056EB5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AD214401C300056EB5 /* Api.swift */; };
 		105DA5B42144049B00056EB5 /* ApiRequestInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */; };
 		105DA5B6214408E800056EB5 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5B5214408E800056EB5 /* JSONDecoder.swift */; };
+		105DA5B9214413B900056EB5 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5B8214413B900056EB5 /* ApiRequest.swift */; };
 		180EB390DC061C56DCBDC64B /* Pods_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F722B4A941A39CF07259F8E /* Pods_Api.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		105DA5AD214401C300056EB5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterface.swift; sourceTree = "<group>"; };
 		105DA5B5214408E800056EB5 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		105DA5B8214413B900056EB5 /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		23F0162AF5FFDC7EDDECD41B /* Pods-Api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.release.xcconfig"; sourceTree = "<group>"; };
 		3F722B4A941A39CF07259F8E /* Pods_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74A8B1667B7B51295C53E4A6 /* Pods-Api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 		105DA5392143E82200056EB5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				105DA5B7214412DE00056EB5 /* Model */,
 				105DA5A62143FD0300056EB5 /* Services */,
 				105DA5A52143FCFC00056EB5 /* Core */,
 				105DA53A2143E82200056EB5 /* Api.h */,
@@ -110,6 +113,7 @@
 				105DA5AD214401C300056EB5 /* Api.swift */,
 				105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */,
 				105DA5B5214408E800056EB5 /* JSONDecoder.swift */,
+				105DA5B8214413B900056EB5 /* ApiRequest.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -119,6 +123,13 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		105DA5B7214412DE00056EB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3DDE4847EBDC2202B70FB971 /* Frameworks */ = {
@@ -272,6 +283,7 @@
 				105DA5B42144049B00056EB5 /* ApiRequestInterface.swift in Sources */,
 				105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */,
 				105DA5B6214408E800056EB5 /* JSONDecoder.swift in Sources */,
+				105DA5B9214413B900056EB5 /* ApiRequest.swift in Sources */,
 				105DA5AE214401C300056EB5 /* Api.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
