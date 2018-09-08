@@ -17,7 +17,6 @@
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
 		106D86392143AAB90080EFAC /* MovieGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86382143AAB90080EFAC /* MovieGoTests.swift */; };
-		618840141559ADB78B121EAC /* Pods_MovieGoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,7 +46,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGoTests/Pods-MovieGoTests.release.xcconfig"; sourceTree = "<group>"; };
 		031371DF275CAEB9CA6DDAA6 /* Pods-MovieGo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.debug.xcconfig"; sourceTree = "<group>"; };
 		105DA5572143EE2300056EB5 /* MovieGo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MovieGo.entitlements; sourceTree = "<group>"; };
 		105DA58F2143F35400056EB5 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -64,7 +62,6 @@
 		106D863A2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGoTests/Pods-MovieGoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +80,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				618840141559ADB78B121EAC /* Pods_MovieGoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,8 +142,6 @@
 			children = (
 				031371DF275CAEB9CA6DDAA6 /* Pods-MovieGo.debug.xcconfig */,
 				FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */,
-				F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */,
-				029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -175,6 +169,7 @@
 				106D861A2143AAB80080EFAC /* Frameworks */,
 				106D861B2143AAB80080EFAC /* Resources */,
 				105DA5942143F36200056EB5 /* Embed Frameworks */,
+				BA31D8391AB188D280834415 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -189,7 +184,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 106D86402143AAB90080EFAC /* Build configuration list for PBXNativeTarget "MovieGoTests" */;
 			buildPhases = (
-				A92DF742F0D307C497960922 /* [CP] Check Pods Manifest.lock */,
 				106D86302143AAB90080EFAC /* Sources */,
 				106D86312143AAB90080EFAC /* Frameworks */,
 				106D86322143AAB90080EFAC /* Resources */,
@@ -286,22 +280,22 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A92DF742F0D307C497960922 /* [CP] Check Pods Manifest.lock */ = {
+		BA31D8391AB188D280834415 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
+				"${SRCROOT}/Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-MovieGoTests-checkManifestLockResult.txt",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -512,7 +506,6 @@
 		};
 		106D86412143AAB90080EFAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F0BEC22F78728BB1899CC56F /* Pods-MovieGoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -534,7 +527,6 @@
 		};
 		106D86422143AAB90080EFAC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 029023BD7734D25870E26DC6 /* Pods-MovieGoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

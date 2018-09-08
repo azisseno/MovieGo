@@ -13,6 +13,8 @@
 		105DA5A82143FD1500056EB5 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5A72143FD1500056EB5 /* ApiParser.swift */; };
 		105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AB214400C600056EB5 /* ErrorResponse.swift */; };
 		105DA5AE214401C300056EB5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AD214401C300056EB5 /* Api.swift */; };
+		105DA5B42144049B00056EB5 /* ApiRequestInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */; };
+		180EB390DC061C56DCBDC64B /* Pods_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F722B4A941A39CF07259F8E /* Pods_Api.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,10 @@
 		105DA5A72143FD1500056EB5 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
 		105DA5AB214400C600056EB5 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		105DA5AD214401C300056EB5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestInterface.swift; sourceTree = "<group>"; };
+		23F0162AF5FFDC7EDDECD41B /* Pods-Api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.release.xcconfig"; sourceTree = "<group>"; };
+		3F722B4A941A39CF07259F8E /* Pods_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74A8B1667B7B51295C53E4A6 /* Pods-Api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				180EB390DC061C56DCBDC64B /* Pods_Api.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +69,8 @@
 				105DA5392143E82200056EB5 /* Api */,
 				105DA5442143E82200056EB5 /* ApiTests */,
 				105DA5382143E82200056EB5 /* Products */,
+				46D32F9348BFA71C31F29188 /* Pods */,
+				3DDE4847EBDC2202B70FB971 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +109,7 @@
 				105DA5A72143FD1500056EB5 /* ApiParser.swift */,
 				105DA5AB214400C600056EB5 /* ErrorResponse.swift */,
 				105DA5AD214401C300056EB5 /* Api.swift */,
+				105DA5B32144049B00056EB5 /* ApiRequestInterface.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -109,6 +119,23 @@
 			children = (
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		3DDE4847EBDC2202B70FB971 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3F722B4A941A39CF07259F8E /* Pods_Api.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46D32F9348BFA71C31F29188 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74A8B1667B7B51295C53E4A6 /* Pods-Api.debug.xcconfig */,
+				23F0162AF5FFDC7EDDECD41B /* Pods-Api.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +156,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105DA54B2143E82200056EB5 /* Build configuration list for PBXNativeTarget "Api" */;
 			buildPhases = (
+				DEDAC6ECD7784ABE6F69743F /* [CP] Check Pods Manifest.lock */,
 				105DA5322143E82200056EB5 /* Sources */,
 				105DA5332143E82200056EB5 /* Frameworks */,
 				105DA5342143E82200056EB5 /* Headers */,
@@ -215,11 +243,33 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DEDAC6ECD7784ABE6F69743F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Api-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		105DA5322143E82200056EB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105DA5B42144049B00056EB5 /* ApiRequestInterface.swift in Sources */,
 				105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */,
 				105DA5AE214401C300056EB5 /* Api.swift in Sources */,
 				105DA5A82143FD1500056EB5 /* ApiParser.swift in Sources */,
@@ -367,6 +417,7 @@
 		};
 		105DA54C2143E82200056EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74A8B1667B7B51295C53E4A6 /* Pods-Api.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -395,6 +446,7 @@
 		};
 		105DA54D2143E82200056EB5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23F0162AF5FFDC7EDDECD41B /* Pods-Api.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
