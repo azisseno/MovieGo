@@ -7,8 +7,13 @@
 //
 
 import Foundation
+import Alamofire
 
 public struct Api {
+    
+    //MARK: - Config
+    public let encoding: ParameterEncoding = JSONEncoding.default
+    public var headers: [String: String]?
     
     var apiBasePath: String {
         return pApiBasePath
