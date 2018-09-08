@@ -8,6 +8,7 @@
 
 import UIKit
 import Storage
+import Api
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        Api.initInstance(apiBasePath: "http://api.themoviedb.org/3",
+                         imageBasePath: "​http://image.tmdb.org/t/p")
+
         return true
     }
 

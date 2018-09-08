@@ -12,8 +12,12 @@ target 'MovieGo' do
 end
 
 target 'Api' do
-    api_pod
     project 'Api/Api.xcodeproj'
+    
+    target 'ApiTests' do
+        inherit! :search_paths
+    end
+    api_pod
 end
 
 target 'Storage' do

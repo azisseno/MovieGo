@@ -32,7 +32,6 @@ extension ApiRequestInterface {
         return Alamofire.request(Api.shared.apiBasePath + path,
                                  method: method,
                                  parameters: params,
-                                 encoding: Api.shared.encoding,
                                  headers: Api.shared.headers)
             .downloadProgress(closure: { prg in
                 self.progress?(prg.fractionCompleted)

@@ -12,8 +12,10 @@ import Alamofire
 public struct Api {
     
     //MARK: - Config
-    public let encoding: ParameterEncoding = JSONEncoding.default
     public var headers: [String: String]?
+    private var apiKey: String {
+        return "2696829a81b1b5827d515ff121700838"
+    }
     
     var apiBasePath: String {
         return pApiBasePath
@@ -41,5 +43,10 @@ public struct Api {
                                     imageBasePath: String) {
         instance = Api(apiBasePath: apiBasePath,
                        imageBasePath: imageBasePath)
+    }
+    
+    //MARK: - Helper
+    func createParams() -> Parameters {
+        return ["api_key": apiKey]
     }
 }

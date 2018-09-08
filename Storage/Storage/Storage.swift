@@ -101,6 +101,7 @@ public struct Storage {
         }
     }
     
+    @discardableResult
     public mutating func save() -> SaveStatus {
         if context.hasChanges {
             do {
