@@ -10,7 +10,9 @@
 		105DA5412143E82200056EB5 /* Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5372143E82200056EB5 /* Api.framework */; };
 		105DA5462143E82200056EB5 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5452143E82200056EB5 /* ApiTests.swift */; };
 		105DA5482143E82200056EB5 /* Api.h in Headers */ = {isa = PBXBuildFile; fileRef = 105DA53A2143E82200056EB5 /* Api.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D060776EACD6ED3D075B97B /* Pods_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D5C23E95F63DA045090E4BA /* Pods_Api.framework */; };
+		105DA5A82143FD1500056EB5 /* ApiParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5A72143FD1500056EB5 /* ApiParser.swift */; };
+		105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AB214400C600056EB5 /* ErrorResponse.swift */; };
+		105DA5AE214401C300056EB5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AD214401C300056EB5 /* Api.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,9 +32,9 @@
 		105DA5402143E82200056EB5 /* ApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		105DA5452143E82200056EB5 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		105DA5472143E82200056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4A34D96B24720BAC85B074BC /* Pods-Api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.release.xcconfig"; sourceTree = "<group>"; };
-		7D5C23E95F63DA045090E4BA /* Pods_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F5E3F9C0BC395E83389641C5 /* Pods-Api.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.debug.xcconfig"; sourceTree = "<group>"; };
+		105DA5A72143FD1500056EB5 /* ApiParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiParser.swift; sourceTree = "<group>"; };
+		105DA5AB214400C600056EB5 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		105DA5AD214401C300056EB5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +42,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D060776EACD6ED3D075B97B /* Pods_Api.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,23 +56,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0E4DC1297918FC7F20802E3F /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F5E3F9C0BC395E83389641C5 /* Pods-Api.debug.xcconfig */,
-				4A34D96B24720BAC85B074BC /* Pods-Api.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		105DA52D2143E82200056EB5 = {
 			isa = PBXGroup;
 			children = (
 				105DA5392143E82200056EB5 /* Api */,
 				105DA5442143E82200056EB5 /* ApiTests */,
 				105DA5382143E82200056EB5 /* Products */,
-				0E4DC1297918FC7F20802E3F /* Pods */,
-				FEEECA85879174E5BCECFCDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +77,8 @@
 		105DA5392143E82200056EB5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
+				105DA5A62143FD0300056EB5 /* Services */,
+				105DA5A52143FCFC00056EB5 /* Core */,
 				105DA53A2143E82200056EB5 /* Api.h */,
 				105DA53B2143E82200056EB5 /* Info.plist */,
 			);
@@ -102,12 +94,21 @@
 			path = ApiTests;
 			sourceTree = "<group>";
 		};
-		FEEECA85879174E5BCECFCDE /* Frameworks */ = {
+		105DA5A52143FCFC00056EB5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				7D5C23E95F63DA045090E4BA /* Pods_Api.framework */,
+				105DA5A72143FD1500056EB5 /* ApiParser.swift */,
+				105DA5AB214400C600056EB5 /* ErrorResponse.swift */,
+				105DA5AD214401C300056EB5 /* Api.swift */,
 			);
-			name = Frameworks;
+			path = Core;
+			sourceTree = "<group>";
+		};
+		105DA5A62143FD0300056EB5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +129,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 105DA54B2143E82200056EB5 /* Build configuration list for PBXNativeTarget "Api" */;
 			buildPhases = (
-				D531CCB58314C7DF85E23F59 /* [CP] Check Pods Manifest.lock */,
 				105DA5322143E82200056EB5 /* Sources */,
 				105DA5332143E82200056EB5 /* Frameworks */,
 				105DA5342143E82200056EB5 /* Headers */,
@@ -173,6 +173,7 @@
 				TargetAttributes = {
 					105DA5362143E82200056EB5 = {
 						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
 					};
 					105DA53F2143E82200056EB5 = {
 						CreatedOnToolsVersion = 9.4.1;
@@ -214,32 +215,14 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		D531CCB58314C7DF85E23F59 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Api-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		105DA5322143E82200056EB5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */,
+				105DA5AE214401C300056EB5 /* Api.swift in Sources */,
+				105DA5A82143FD1500056EB5 /* ApiParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,8 +367,8 @@
 		};
 		105DA54C2143E82200056EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F5E3F9C0BC395E83389641C5 /* Pods-Api.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -404,6 +387,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.azisseno.careemassignment.Api;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -411,8 +395,8 @@
 		};
 		105DA54D2143E82200056EB5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A34D96B24720BAC85B074BC /* Pods-Api.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -439,6 +423,7 @@
 		105DA54F2143E82200056EB5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TK32MKP4J;
 				INFOPLIST_FILE = ApiTests/Info.plist;
@@ -457,6 +442,7 @@
 		105DA5502143E82200056EB5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TK32MKP4J;
 				INFOPLIST_FILE = ApiTests/Info.plist;
