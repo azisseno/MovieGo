@@ -58,7 +58,7 @@ public struct Storage {
     
     @available(iOS 10.0, *)
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "Model")
+        let container = NSPersistentContainer(name: "MovieStorage")
         container.loadPersistentStores { (storeDescription, error) in
             print("CoreData: Inited \(storeDescription)")
             guard error == nil else {
