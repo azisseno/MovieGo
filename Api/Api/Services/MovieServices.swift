@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-public struct MovieService {
+public struct MovieServices {
     
     /**
      Get Search Movies

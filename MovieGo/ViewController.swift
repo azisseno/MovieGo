@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     }
     
     func testGetSearchMovie() {
-        MovieService.getSearchMovie(
+        MovieServices.getSearchMovie(
             query: "Batman",
             page: 1,
             onSuccess: { movieResponse in

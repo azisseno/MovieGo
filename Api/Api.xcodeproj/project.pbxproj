@@ -18,6 +18,8 @@
 		105DA5B9214413B900056EB5 /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5B8214413B900056EB5 /* ApiRequest.swift */; };
 		105DA5BB214417B900056EB5 /* MovieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5BA214417B900056EB5 /* MovieResponse.swift */; };
 		105DA5BD214417F800056EB5 /* MovieServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5BC214417F800056EB5 /* MovieServices.swift */; };
+		105DA5C92145228A00056EB5 /* MovieServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5C82145228A00056EB5 /* MovieServicesTests.swift */; };
+		105DA5CB214528AD00056EB5 /* MovieServicesStubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5CA214528AD00056EB5 /* MovieServicesStubTests.swift */; };
 		180EB390DC061C56DCBDC64B /* Pods_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F722B4A941A39CF07259F8E /* Pods_Api.framework */; };
 		8192751AB449543FACF7DA38 /* Pods_ApiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 612AC28B7FA98E97D78A8C61 /* Pods_ApiTests.framework */; };
 /* End PBXBuildFile section */
@@ -48,6 +50,8 @@
 		105DA5BC214417F800056EB5 /* MovieServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServices.swift; sourceTree = "<group>"; };
 		105DA5C4214428A300056EB5 /* Pods_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		105DA5C6214428CE00056EB5 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		105DA5C82145228A00056EB5 /* MovieServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServicesTests.swift; sourceTree = "<group>"; };
+		105DA5CA214528AD00056EB5 /* MovieServicesStubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServicesStubTests.swift; sourceTree = "<group>"; };
 		1A7BF8B10EEB5764208D1401 /* Pods-ApiTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApiTests.release.xcconfig"; path = "../Pods/Target Support Files/Pods-ApiTests/Pods-ApiTests.release.xcconfig"; sourceTree = "<group>"; };
 		23F0162AF5FFDC7EDDECD41B /* Pods-Api.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Api.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Api/Pods-Api.release.xcconfig"; sourceTree = "<group>"; };
 		3F722B4A941A39CF07259F8E /* Pods_Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				105DA5452143E82200056EB5 /* ApiTests.swift */,
+				105DA5C82145228A00056EB5 /* MovieServicesTests.swift */,
+				105DA5CA214528AD00056EB5 /* MovieServicesStubTests.swift */,
 				105DA5472143E82200056EB5 /* Info.plist */,
 			);
 			path = ApiTests;
@@ -291,10 +297,12 @@
 			inputPaths = (
 				"${SRCROOT}/../Pods/Target Support Files/Pods-ApiTests/Pods-ApiTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -358,7 +366,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				105DA5C92145228A00056EB5 /* MovieServicesTests.swift in Sources */,
 				105DA5462143E82200056EB5 /* ApiTests.swift in Sources */,
+				105DA5CB214528AD00056EB5 /* MovieServicesStubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

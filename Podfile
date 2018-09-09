@@ -1,14 +1,14 @@
 platform :ios, '9.0'
 use_frameworks!
 
-def api_pod
+def request_pod
     pod 'Alamofire', '4.7.3'
 end
 
 workspace 'MovieGo'
 
 target 'MovieGo' do
-    api_pod
+    request_pod
 end
 
 target 'Api' do
@@ -17,7 +17,8 @@ target 'Api' do
     target 'ApiTests' do
         inherit! :search_paths
     end
-    api_pod
+    pod 'OHHTTPStubs/Swift'
+    request_pod
 end
 
 target 'Storage' do
