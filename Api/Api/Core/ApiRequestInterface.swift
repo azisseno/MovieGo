@@ -19,10 +19,9 @@ public protocol ApiRequestInterface {
     var onFailure: ((ErrorResponse) -> ())? { get }
 }
 
-fileprivate struct BaseResponse: Codable {
-    var status_code: Int
-    var status_message: String
-    var success: Bool = true
+fileprivate struct ErrorStackResponse: Codable {
+    var errors: [String]?
+    var status_message: String?
 }
 
 extension ApiRequestInterface {
@@ -38,48 +37,40 @@ extension ApiRequestInterface {
             })
             .responseData(completionHandler: { response in
                 let decoder = JSONDecoder()
-                if let data = self.guardResponse(decoder: decoder, response: response) {
-                    self.handleSuccessResponse(decoder: decoder, data: data)
+                let result: Result<ModelResponse> = decoder.decodeResponse(from: response)
+                switch result {
+                case .success(let object):
+                    self.onSuccess?(object)
+                case .failure(let error):
+                    self.handleAlamoforeError(decoder: decoder,
+                                              response: response,
+                                              error: error)
                 }
             }
         )
     }
     
-    private func guardResponse(decoder: JSONDecoder, response: DataResponse<Data>) -> Data? {
-        let baseResult: Result<BaseResponse> = decoder.decodeResponse(from: response)
-        switch baseResult {
-        case .success(let json):
-            if !json.success {
-                let errorResponse = ErrorResponse(status: json.status_code,
-                                                  message: json.status_message)
-                self.onFailure?(errorResponse)
-            } else {
-                return response.value
-            }
-        case .failure(let error):
-            self.handleAlamoforeError(response: response, err: error)
-        }
-        return nil
-    }
-    
-    private func handleSuccessResponse(decoder: JSONDecoder, data: Data) {
-        do {
-            let result: ModelResponse = try decoder.decode(ModelResponse.self, from: data)
-            onSuccess?(result)
-        } catch {
-            let errorResponse: ErrorResponse = ErrorResponse(
-                status: 520,
-                message: error.localizedDescription)
-            onFailure?(errorResponse)
-        }
-    }
-    
-    private func handleAlamoforeError(response: DataResponse<Data>,
-                                      err: Error) {
+    private func handleAlamoforeError(decoder: JSONDecoder,
+                                      response: DataResponse<Data>,
+                                      error: Error) {
+        var message = error.localizedDescription
         let statusCode: Int = response.response?.statusCode ?? 520
+        if let data = response.result.value {
+            do {
+                let errorStack = try decoder.decode(ErrorStackResponse.self, from: data)
+                if let errors = errorStack.errors, let errorMessage = errors.first {
+                    message = errorMessage
+                }
+                if let errorMessage = errorStack.status_message {
+                    message = errorMessage
+                }
+            } catch {
+                message = error.localizedDescription
+            }
+        }
         let error: ErrorResponse = ErrorResponse(
             status: statusCode,
-            message: err.localizedDescription)
+            message: message)
         onFailure?(error)
     }
 

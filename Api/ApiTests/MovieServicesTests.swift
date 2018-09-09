@@ -22,7 +22,7 @@ class MovieServicesTest: XCTestCase {
     
     func testGetSearchMovie() {
         
-        let expectation = XCTestExpectation(description: "Search Movie Called")
+        let expectation = self.expectation(description: "Search Movie Called")
 
         MovieServices.getSearchMovie(
             query: "Batman",
@@ -38,8 +38,8 @@ class MovieServicesTest: XCTestCase {
             }
         ).call()
         
-        let result = XCTWaiter.wait(for: [expectation], timeout: 10.0) // wait and store the result
-        XCTAssertEqual(result, .completed) // check if the result is completed before timeout
-
+        waitForExpectations(timeout: 10) { error in
+            XCTAssertTrue(error == nil)
+        }
     }
 }

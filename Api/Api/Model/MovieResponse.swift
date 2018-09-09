@@ -9,7 +9,8 @@
 import Foundation
 
 public struct MovieResponse: Codable {
-    var page: Int
+    var page: Int = 0
     var total_results: Int
     var total_pages: Int
+    var results: [Movie] = []
 }
