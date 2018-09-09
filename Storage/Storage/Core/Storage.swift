@@ -85,6 +85,13 @@ public struct Storage {
         return managedObjectContext
     }()
     
+    private lazy var backgroundManagedObjectContext: NSManagedObjectContext = {
+        let coordinator = self.persistentStoreCoordinator
+        var managedObjectContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = coordinator
+        return managedObjectContext
+    }()
+    
     // MARK: Public methods
     
     public enum SaveStatus {
@@ -97,6 +104,16 @@ public struct Storage {
                 return persistentContainer.viewContext
             } else {
                 return managedObjectContext
+            }
+        }
+    }
+    
+    var backgroundContext: NSManagedObjectContext {
+        mutating get {
+            if #available(iOS 10.0, *) {
+                return persistentContainer.newBackgroundContext()
+            } else {
+                return backgroundManagedObjectContext
             }
         }
     }
