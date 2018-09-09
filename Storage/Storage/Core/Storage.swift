@@ -54,13 +54,20 @@ extension NSPersistentStoreCoordinator {
 
 public struct Storage {
     
+    /// Shared instance of storage
     public static var shared = Storage()
     
+    /// Set custom NSPersistentStoreCoordinator
+    ///
+    /// - Parameter pc: NSPersistentStoreCoordinator
     public static func setPersistentStoreCoordinator(_ pc: NSPersistentStoreCoordinator) {
         shared.persistentStoreCoordinator = pc
     }
     
     @available(iOS 10.0, *)
+    /// Set custom NSPersistentContainer
+    ///
+    /// - Parameter pc: NSPersistentContainer
     public static func setPersistentContainer(_ pc: NSPersistentContainer) {
         shared.persistentContainer = pc
     }
@@ -102,11 +109,11 @@ public struct Storage {
     }()
     
     // MARK: Public methods
-    
     public enum SaveStatus {
         case saved, rolledBack, hasNoChanges
     }
     
+    /// Internal view context property for both iOS 9 and > iOS 10
     var context: NSManagedObjectContext {
         mutating get {
             if #available(iOS 10.0, *) {
@@ -117,6 +124,7 @@ public struct Storage {
         }
     }
     
+    /// Internal background context property for both iOS 9 and > iOS 10
     var backgroundContext: NSManagedObjectContext {
         mutating get {
             if #available(iOS 10.0, *) {
@@ -127,14 +135,17 @@ public struct Storage {
         }
     }
     
+    /// Save changes of Core Data in background context
+    ///
+    /// - Returns: Enum of success status
     @discardableResult
     public mutating func save() -> SaveStatus {
-        if context.hasChanges {
+        if backgroundContext.hasChanges {
             do {
-                try context.save()
+                try backgroundContext.save()
                 return .saved
             } catch {
-                context.rollback()
+                backgroundContext.rollback()
                 return .rolledBack
             }
         }

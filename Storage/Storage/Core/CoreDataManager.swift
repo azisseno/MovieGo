@@ -27,20 +27,4 @@ class CoreDataManager<T: NSManagedObject> {
         }
         return insertObject
     }()
-    
-    /// Save changes of Core Data in background context
-    ///
-    /// - Returns: Boolean of success
-    @discardableResult
-    func backgroundSave() -> Bool {
-        if Storage.shared.backgroundContext.hasChanges {
-            do {
-                try Storage.shared.backgroundContext.save()
-                return true
-            } catch {
-                return false
-            }
-        }
-        return true
-    }
 }

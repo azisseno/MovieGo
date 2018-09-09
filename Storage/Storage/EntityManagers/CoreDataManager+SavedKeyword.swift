@@ -11,6 +11,11 @@ import CoreData
 
 extension CoreDataManager where T: SavedKeyword {
     
+    func saveKeyword(_ keyword: String) {
+        insertObject.keyword = keyword
+        Storage.shared.save()
+    }
+    
     /// Get keyword data from storage
     ///
     /// - Parameters:
@@ -45,6 +50,6 @@ extension CoreDataManager where T: SavedKeyword {
                 Storage.shared.backgroundContext.delete(result)
             }
         }
-        backgroundSave()
+        Storage.shared.save()
     }
 }
