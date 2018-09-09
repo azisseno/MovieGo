@@ -6,7 +6,7 @@ MovieGo is the codename of this project :D
 This project is built in clean architecture with SOLID Principle. 
 
 ## Architecture
-Everyone is comparing architectures, but that's not what people should do. As far as I can see, an MVP is good for a small app with a few screens. But let's take a look the the assignment number two **Maintainability**
+Everyone is comparing architectures, but that's not what people should do. As far as I can see, an MVP is good for a small app with a few screens. But let's take a look to the assignment number two **Maintainability**
 
 ![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/Maintainability.png)
 
