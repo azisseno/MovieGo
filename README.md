@@ -16,14 +16,11 @@ Let's assume that this project will be real big project. Then yes! the real prob
 ## Proejcts
 Let's take a look to the picture above (again). I'm assuming that this project is initial project for a growing company. So I have to start this project with **Non Monolithic** workplace to cut off technical debt in the future as well. This project is seperated by 3 projects namely, `Api`, `Storage`, and `MovieGo`:
 
- **1. Api** 
- All about api request is placed here
+ **1. Api** - All about api request is placed here
 
- **2. Storage** 
- All about device database management
+ **2. Storage** - All about device database management
  
- **3. MovieGo** 
- The main module a.k.a our apps, or we may say **The Launcher** !!
+ **3. MovieGo** - The main module a.k.a our apps, or we may say **The Launcher** !!
  
 
 ## Module Generator
