@@ -18,6 +18,15 @@
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
 		106D86392143AAB90080EFAC /* MovieGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86382143AAB90080EFAC /* MovieGoTests.swift */; };
 		10D4A549214551FA0012C91F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A548214551FA0012C91F /* Constant.swift */; };
+		10D4A56B214569F20012C91F /* TestModuleDefaultRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A561214569F20012C91F /* TestModuleDefaultRouter.swift */; };
+		10D4A56C214569F20012C91F /* TestModuleDefaultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A562214569F20012C91F /* TestModuleDefaultViewController.swift */; };
+		10D4A56D214569F20012C91F /* TestModuleDefaultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A563214569F20012C91F /* TestModuleDefaultBuilder.swift */; };
+		10D4A56E214569F20012C91F /* TestModuleDefaultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A564214569F20012C91F /* TestModuleDefaultPresenter.swift */; };
+		10D4A56F214569F20012C91F /* TestModuleDefaultInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A565214569F20012C91F /* TestModuleDefaultInteractor.swift */; };
+		10D4A570214569F20012C91F /* TestModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A567214569F20012C91F /* TestModuleViewController.swift */; };
+		10D4A571214569F20012C91F /* TestModulePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A568214569F20012C91F /* TestModulePresenter.swift */; };
+		10D4A572214569F20012C91F /* TestModuleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A569214569F20012C91F /* TestModuleRouter.swift */; };
+		10D4A573214569F20012C91F /* TestModuleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A56A214569F20012C91F /* TestModuleInteractor.swift */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +71,15 @@
 		106D86382143AAB90080EFAC /* MovieGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGoTests.swift; sourceTree = "<group>"; };
 		106D863A2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D4A548214551FA0012C91F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		10D4A561214569F20012C91F /* TestModuleDefaultRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleDefaultRouter.swift; sourceTree = "<group>"; };
+		10D4A562214569F20012C91F /* TestModuleDefaultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleDefaultViewController.swift; sourceTree = "<group>"; };
+		10D4A563214569F20012C91F /* TestModuleDefaultBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleDefaultBuilder.swift; sourceTree = "<group>"; };
+		10D4A564214569F20012C91F /* TestModuleDefaultPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleDefaultPresenter.swift; sourceTree = "<group>"; };
+		10D4A565214569F20012C91F /* TestModuleDefaultInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleDefaultInteractor.swift; sourceTree = "<group>"; };
+		10D4A567214569F20012C91F /* TestModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleViewController.swift; sourceTree = "<group>"; };
+		10D4A568214569F20012C91F /* TestModulePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModulePresenter.swift; sourceTree = "<group>"; };
+		10D4A569214569F20012C91F /* TestModuleRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleRouter.swift; sourceTree = "<group>"; };
+		10D4A56A214569F20012C91F /* TestModuleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestModuleInteractor.swift; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
@@ -120,13 +138,14 @@
 			isa = PBXGroup;
 			children = (
 				105DA5572143EE2300056EB5 /* MovieGo.entitlements */,
+				106D862F2143AAB90080EFAC /* Info.plist */,
+				106D86222143AAB90080EFAC /* ViewController.swift */,
+				106D862A2143AAB90080EFAC /* Assets.xcassets */,
 				105DA5512143EA5C00056EB5 /* Application */,
 				10D4A547214551CF0012C91F /* Core */,
-				106D86222143AAB90080EFAC /* ViewController.swift */,
-				106D86242143AAB90080EFAC /* Main.storyboard */,
-				106D862A2143AAB90080EFAC /* Assets.xcassets */,
+				10D4A55D214569F20012C91F /* Modules */,
 				106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */,
-				106D862F2143AAB90080EFAC /* Info.plist */,
+				106D86242143AAB90080EFAC /* Main.storyboard */,
 			);
 			path = MovieGo;
 			sourceTree = "<group>";
@@ -146,6 +165,54 @@
 				10D4A548214551FA0012C91F /* Constant.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		10D4A55D214569F20012C91F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A55E214569F20012C91F /* TestModule */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		10D4A55E214569F20012C91F /* TestModule */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A55F214569F20012C91F /* Implementations */,
+				10D4A566214569F20012C91F /* Interfaces */,
+			);
+			path = TestModule;
+			sourceTree = "<group>";
+		};
+		10D4A55F214569F20012C91F /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A560214569F20012C91F /* Default */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		10D4A560214569F20012C91F /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A561214569F20012C91F /* TestModuleDefaultRouter.swift */,
+				10D4A562214569F20012C91F /* TestModuleDefaultViewController.swift */,
+				10D4A563214569F20012C91F /* TestModuleDefaultBuilder.swift */,
+				10D4A564214569F20012C91F /* TestModuleDefaultPresenter.swift */,
+				10D4A565214569F20012C91F /* TestModuleDefaultInteractor.swift */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		10D4A566214569F20012C91F /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A567214569F20012C91F /* TestModuleViewController.swift */,
+				10D4A568214569F20012C91F /* TestModulePresenter.swift */,
+				10D4A569214569F20012C91F /* TestModuleRouter.swift */,
+				10D4A56A214569F20012C91F /* TestModuleInteractor.swift */,
+			);
+			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		25D0CB37EF6843E8A82979DE /* Pods */ = {
@@ -318,9 +385,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D4A56B214569F20012C91F /* TestModuleDefaultRouter.swift in Sources */,
+				10D4A56C214569F20012C91F /* TestModuleDefaultViewController.swift in Sources */,
+				10D4A573214569F20012C91F /* TestModuleInteractor.swift in Sources */,
+				10D4A571214569F20012C91F /* TestModulePresenter.swift in Sources */,
 				10D4A549214551FA0012C91F /* Constant.swift in Sources */,
 				106D86232143AAB90080EFAC /* ViewController.swift in Sources */,
 				106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */,
+				10D4A572214569F20012C91F /* TestModuleRouter.swift in Sources */,
+				10D4A56D214569F20012C91F /* TestModuleDefaultBuilder.swift in Sources */,
+				10D4A56F214569F20012C91F /* TestModuleDefaultInteractor.swift in Sources */,
+				10D4A56E214569F20012C91F /* TestModuleDefaultPresenter.swift in Sources */,
+				10D4A570214569F20012C91F /* TestModuleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
