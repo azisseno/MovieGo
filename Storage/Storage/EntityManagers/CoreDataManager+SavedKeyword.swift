@@ -10,6 +10,13 @@ import Foundation
 import CoreData
 
 extension CoreDataManager where T: SavedKeyword {
+    
+    /// Get keyword data from storage
+    ///
+    /// - Parameters:
+    ///   - keyword: keyword filter
+    ///   - backgroundFetch: which context do you want to use
+    /// - Returns: Array of `SavedKeyword` entity
     func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [T] {
         let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: entityName)
         if let keyword = keyword {
@@ -25,6 +32,9 @@ extension CoreDataManager where T: SavedKeyword {
         return results ?? [T]()
     }
     
+    /// Remove keyword data
+    ///
+    /// - Parameter keyword: keyword to be deleted
     func removeData(withKeyword keyword: String) {
         let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: entityName)
         let predicate = NSPredicate(format: "%K == %i", "keyword", keyword)

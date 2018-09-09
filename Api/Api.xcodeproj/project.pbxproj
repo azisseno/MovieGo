@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		02DEEA59FC83520C702B2C5A /* Pods_Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5C4214428A300056EB5 /* Pods_Api.framework */; };
 		105DA5412143E82200056EB5 /* Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5372143E82200056EB5 /* Api.framework */; };
-		105DA5462143E82200056EB5 /* ApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5452143E82200056EB5 /* ApiTests.swift */; };
 		105DA5482143E82200056EB5 /* Api.h in Headers */ = {isa = PBXBuildFile; fileRef = 105DA53A2143E82200056EB5 /* Api.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105DA5AC214400C600056EB5 /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AB214400C600056EB5 /* ErrorResponse.swift */; };
 		105DA5AE214401C300056EB5 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5AD214401C300056EB5 /* Api.swift */; };
@@ -40,7 +39,6 @@
 		105DA53A2143E82200056EB5 /* Api.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Api.h; sourceTree = "<group>"; };
 		105DA53B2143E82200056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105DA5402143E82200056EB5 /* ApiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		105DA5452143E82200056EB5 /* ApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTests.swift; sourceTree = "<group>"; };
 		105DA5472143E82200056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105DA5AB214400C600056EB5 /* ErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 		105DA5AD214401C300056EB5 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 		105DA5442143E82200056EB5 /* ApiTests */ = {
 			isa = PBXGroup;
 			children = (
-				105DA5452143E82200056EB5 /* ApiTests.swift */,
 				105DA5C82145228A00056EB5 /* MovieServicesTests.swift */,
 				105DA5CA214528AD00056EB5 /* MovieServicesStubTests.swift */,
 				105DA5472143E82200056EB5 /* Info.plist */,
@@ -371,7 +368,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				105DA5C92145228A00056EB5 /* MovieServicesTests.swift in Sources */,
-				105DA5462143E82200056EB5 /* ApiTests.swift in Sources */,
 				105DA5CB214528AD00056EB5 /* MovieServicesStubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

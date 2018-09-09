@@ -56,6 +56,15 @@ public struct Storage {
     
     public static var shared = Storage()
     
+    public static func setPersistentStoreCoordinator(_ pc: NSPersistentStoreCoordinator) {
+        shared.persistentStoreCoordinator = pc
+    }
+    
+    @available(iOS 10.0, *)
+    public static func setPersistentContainer(_ pc: NSPersistentContainer) {
+        shared.persistentContainer = pc
+    }
+    
     @available(iOS 10.0, *)
     private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "MovieStorage")
@@ -71,7 +80,7 @@ public struct Storage {
     
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         do {
-            return try NSPersistentStoreCoordinator.coordinator(name: "Model")
+            return try NSPersistentStoreCoordinator.coordinator(name: "MovieStorage")
         } catch {
             print("CoreData: Unresolved error \(error)")
         }
