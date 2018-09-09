@@ -26,6 +26,10 @@ fileprivate struct ErrorStackResponse: Codable {
 
 extension ApiRequestInterface {
     @discardableResult
+    /// Call ApiRequest value
+    ///
+    /// - Returns: DataRequest object will be returned with optional just in case we
+    /// need to implement cancel or pause operation in our app
     public func call() -> DataRequest {
         
         return Alamofire.request(Api.shared.apiBasePath + path,
@@ -50,6 +54,12 @@ extension ApiRequestInterface {
         )
     }
     
+    /// Handle Request Error
+    ///
+    /// - Parameters:
+    ///   - decoder: current decoder
+    ///   - response: response from Alamofire
+    ///   - error: Error type from failure result 
     private func handleAlamoforeError(decoder: JSONDecoder,
                                       response: DataResponse<Data>,
                                       error: Error) {

@@ -13,7 +13,7 @@ import Alamofire
 /// contains base information to request api
 public struct Api {
     
-    //MARK: - Config
+    //MARK: - Getter Configs
     var headers: [String: String]? {
         return nil
     }
@@ -26,6 +26,12 @@ public struct Api {
         return pApiBasePath
     }
     
+    static var shared: Api {
+        return instance
+    }
+    
+    //MARK: - Private properties
+    private static var instance: Api!
     private var pApiBasePath: String
     
     /// Api constructor,
@@ -36,11 +42,9 @@ public struct Api {
         pApiBasePath = apiBasePath
     }
     
-    private static var instance: Api!
-    static var shared: Api {
-        return instance
-    }
-    
+    /// Construct Api object
+    ///
+    /// - Parameter apiBasePath: base path for api call
     public static func initInstance(apiBasePath: String) {
         instance = Api(apiBasePath: apiBasePath)
     }

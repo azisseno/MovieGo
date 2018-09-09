@@ -10,6 +10,11 @@ import Foundation
 import Alamofire
 
 extension JSONDecoder {
+    
+    /// Simplify decoding process of object response from Alamofire function
+    ///
+    /// - Parameter response: Object response from Alamofire
+    /// - Returns: Result with our Model generic type
     func decodeResponse<T: Decodable>(from response: DataResponse<Data>) -> Result<T> {
         guard response.error == nil else {
             return .failure(response.error!)

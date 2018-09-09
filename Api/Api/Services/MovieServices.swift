@@ -9,6 +9,7 @@
 import Foundation
 import Alamofire
 
+/// Movie services
 public struct MovieServices {
     
     /**

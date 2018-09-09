@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Movie model from api
 public struct Movie: Codable {
     var vote_count: Int
     var id: Int

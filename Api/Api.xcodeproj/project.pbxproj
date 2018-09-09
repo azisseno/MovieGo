@@ -110,7 +110,7 @@
 		105DA5392143E82200056EB5 /* Api */ = {
 			isa = PBXGroup;
 			children = (
-				105DA5B7214412DE00056EB5 /* Model */,
+				105DA5B7214412DE00056EB5 /* Models */,
 				105DA5A62143FD0300056EB5 /* Services */,
 				105DA5A52143FCFC00056EB5 /* Core */,
 				105DA53A2143E82200056EB5 /* Api.h */,
@@ -150,13 +150,13 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		105DA5B7214412DE00056EB5 /* Model */ = {
+		105DA5B7214412DE00056EB5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				105DA5BA214417B900056EB5 /* MovieResponse.swift */,
 				10D4A54521454A240012C91F /* Movie.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		3DDE4847EBDC2202B70FB971 /* Frameworks */ = {

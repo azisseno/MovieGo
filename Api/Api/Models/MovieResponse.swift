@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Response Model from GET search movie api
 public struct MovieResponse: Codable {
     var page: Int = 0
     var total_results: Int

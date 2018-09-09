@@ -9,6 +9,8 @@
 import Foundation
 import Alamofire
 
+/// Request implementation to let us create a request value
+/// This struct require generic type of `Codable` response model
 public struct ApiRequest<T>: ApiRequestInterface where T: Codable {
     public typealias ModelResponse = T
     public var path: String

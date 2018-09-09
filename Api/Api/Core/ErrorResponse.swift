@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Error model from api, to simplify high level information
 public struct ErrorResponse {
     
     public var status: Int
