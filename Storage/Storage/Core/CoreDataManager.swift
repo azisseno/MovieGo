@@ -21,10 +21,10 @@ class CoreDataManager<T: NSManagedObject> {
     }()
     
     /// return an entity object
-    var insertObject: T {
-        guard let insertObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: CoreDataStorage.shared.context) as? T else {
+    lazy var insertObject: T = {
+        guard let insertObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: CoreDataStorage.shared.backgroundContext) as? T else {
             fatalError("Entity doesn't exist")
         }
         return insertObject
-    }
+    }()
 }

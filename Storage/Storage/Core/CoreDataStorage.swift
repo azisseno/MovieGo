@@ -55,11 +55,7 @@ extension NSPersistentStoreCoordinator {
 public struct CoreDataStorage {
     
     /// Shared instance of storage
-    public static var shared: CoreDataStorage!
-    
-    public static func initInstance() {
-        shared = CoreDataStorage()
-    }
+    public static var shared = CoreDataStorage()
     
     /// Set custom NSPersistentStoreCoordinator
     ///
@@ -68,10 +64,10 @@ public struct CoreDataStorage {
         shared.persistentStoreCoordinator = pc
     }
     
-    @available(iOS 10.0, *)
     /// Set custom NSPersistentContainer
     ///
     /// - Parameter pc: NSPersistentContainer
+    @available(iOS 10.0, *)
     public static func setPersistentContainer(_ pc: NSPersistentContainer) {
         shared.persistentContainer = pc
     }
@@ -118,32 +114,45 @@ public struct CoreDataStorage {
     }
     
     /// Internal view context property for both iOS 9 and > iOS 10
-    var context: NSManagedObjectContext {
-        mutating get {
-            if #available(iOS 10.0, *) {
-                return persistentContainer.viewContext
-            } else {
-                return managedObjectContext
-            }
+    lazy var context: NSManagedObjectContext = {
+        if #available(iOS 10.0, *) {
+            return persistentContainer.viewContext
+        } else {
+            return managedObjectContext
         }
-    }
+    }()
     
     /// Internal background context property for both iOS 9 and > iOS 10
-    var backgroundContext: NSManagedObjectContext {
-        mutating get {
-            if #available(iOS 10.0, *) {
-                return persistentContainer.newBackgroundContext()
-            } else {
-                return backgroundManagedObjectContext
-            }
+    lazy var backgroundContext: NSManagedObjectContext = {
+        if #available(iOS 10.0, *) {
+            return persistentContainer.newBackgroundContext()
+        } else {
+            return backgroundManagedObjectContext
         }
-    }
+    }()
     
     /// Save changes of Core Data in background context
     ///
     /// - Returns: Enum of success status
     @discardableResult
     public mutating func save() -> SaveStatus {
+        if context.hasChanges {
+            do {
+                try context.save()
+                return .saved
+            } catch {
+                context.rollback()
+                return .rolledBack
+            }
+        }
+        return .hasNoChanges
+    }
+
+    /// Save changes of Core Data in background context
+    ///
+    /// - Returns: Enum of success status
+    @discardableResult
+    public mutating func backgroundSave() -> SaveStatus {
         if backgroundContext.hasChanges {
             do {
                 try backgroundContext.save()

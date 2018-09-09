@@ -49,13 +49,12 @@ class StorageTestHelper {
                 fatalError("Create an in-mem coordinator failed \(error)")
             }
         }
+        container.viewContext.automaticallyMergesChangesFromParent = true
         return container
     }()
 
-    func initStorage() {
-        CoreDataStorage.initInstance()
+    func setupMockCoreData() {
         CoreDataStorage.setPersistentContainer(mockPersistantContainer)
         CoreDataStorage.setPersistentStoreCoordinator(mockPersistentStoreCoordinator)
-    }
-    
+    }    
 }

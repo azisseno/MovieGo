@@ -4,6 +4,6 @@
         <attribute name="keyword" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SavedKeyword" positionX="-63" positionY="-18" width="128" height="60"/>
+        <element name="SavedKeyword" positionX="-63" positionY="-18" width="128" height="30"/>
     </elements>
 </model>

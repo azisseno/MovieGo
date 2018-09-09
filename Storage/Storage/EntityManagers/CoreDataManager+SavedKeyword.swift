@@ -9,14 +9,12 @@
 import Foundation
 import CoreData
 
-extension CoreDataManager where T: SavedKeyword {
-    
+class SavedKeywordManager: CoreDataManager<SavedKeyword> {
     /// Save keyword to core data
     ///
     /// - Parameter keyword: keyword from search bar
     func saveKeyword(_ keyword: String) {
         insertObject.keyword = keyword
-        CoreDataStorage.shared.save()
     }
     
     /// Get keyword data from storage
@@ -25,27 +23,27 @@ extension CoreDataManager where T: SavedKeyword {
     ///   - keyword: keyword filter
     ///   - backgroundFetch: which context do you want to use
     /// - Returns: Array of `SavedKeyword` entity
-    func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [T] {
-        let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: entityName)
+    func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [SavedKeyword] {
+        let request: NSFetchRequest<SavedKeyword> = NSFetchRequest<SavedKeyword>(entityName: entityName)
         if let keyword = keyword {
-            let predicate = NSPredicate(format: "%K == %i", "keyword", keyword)
+            let predicate = NSPredicate(format: "%K == %@", "keyword", keyword)
             request.predicate = predicate
         }
-        let results: [T]?
+        let results: [SavedKeyword]?
         if backgroundFetch {
             results = try? CoreDataStorage.shared.backgroundContext.fetch(request)
         } else {
             results = try? CoreDataStorage.shared.context.fetch(request)
         }
-        return results ?? [T]()
+        return results ?? [SavedKeyword]()
     }
     
     /// Remove keyword data
     ///
     /// - Parameter keyword: keyword to be deleted
     func removeData(withKeyword keyword: String) {
-        let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: entityName)
-        let predicate = NSPredicate(format: "%K == %i", "keyword", keyword)
+        let request: NSFetchRequest<SavedKeyword> = NSFetchRequest<SavedKeyword>(entityName: entityName)
+        let predicate = NSPredicate(format: "%K == %@", "keyword", keyword)
         request.predicate = predicate
         let results = try? CoreDataStorage.shared.backgroundContext.fetch(request)
         if let results = results {
