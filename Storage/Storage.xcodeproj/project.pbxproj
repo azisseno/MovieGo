@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		105DA5702143F1BC00056EB5 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5662143F1BB00056EB5 /* Storage.framework */; };
-		105DA5752143F1BC00056EB5 /* StorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5742143F1BC00056EB5 /* StorageTests.swift */; };
 		105DA5772143F1BC00056EB5 /* Storage.h in Headers */ = {isa = PBXBuildFile; fileRef = 105DA5692143F1BC00056EB5 /* Storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105DA5822143F1DA00056EB5 /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
-		105DA5842143F1E300056EB5 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5832143F1E300056EB5 /* Storage.swift */; };
+		105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5832143F1E300056EB5 /* CoreDataStorage.swift */; };
 		10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5872145791B0012C91F /* CoreDataManager.swift */; };
 		10D4A58D21457D760012C91F /* CoreDataManager+SavedKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58C21457D760012C91F /* CoreDataManager+SavedKeyword.swift */; };
+		10D4A58F21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */; };
+		10D4A59121458D500012C91F /* StorageTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A59021458D500012C91F /* StorageTestHelper.swift */; };
+		10D4A593214595770012C91F /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
 		5FD8BE9679B63B50456ACC37 /* Pods_Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40139F7EB702961A83B40727 /* Pods_Storage.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,12 +34,13 @@
 		105DA5692143F1BC00056EB5 /* Storage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Storage.h; sourceTree = "<group>"; };
 		105DA56A2143F1BC00056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105DA56F2143F1BC00056EB5 /* StorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		105DA5742143F1BC00056EB5 /* StorageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTests.swift; sourceTree = "<group>"; };
 		105DA5762143F1BC00056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105DA5812143F1DA00056EB5 /* MovieStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieStorage.xcdatamodel; sourceTree = "<group>"; };
-		105DA5832143F1E300056EB5 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		105DA5832143F1E300056EB5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		10D4A5872145791B0012C91F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		10D4A58C21457D760012C91F /* CoreDataManager+SavedKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+SavedKeyword.swift"; sourceTree = "<group>"; };
+		10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerSavedKeywordTests.swift; sourceTree = "<group>"; };
+		10D4A59021458D500012C91F /* StorageTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTestHelper.swift; sourceTree = "<group>"; };
 		3E9E984C0385C26F895C567D /* Pods-Storage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storage.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Storage/Pods-Storage.debug.xcconfig"; sourceTree = "<group>"; };
 		40139F7EB702961A83B40727 /* Pods_Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4622C6D1BC3E6D8CBDF830D3 /* Pods-Storage.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storage.release.xcconfig"; path = "../Pods/Target Support Files/Pods-Storage/Pods-Storage.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,7 +101,8 @@
 		105DA5732143F1BC00056EB5 /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
-				105DA5742143F1BC00056EB5 /* StorageTests.swift */,
+				10D4A59021458D500012C91F /* StorageTestHelper.swift */,
+				10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */,
 				105DA5762143F1BC00056EB5 /* Info.plist */,
 			);
 			path = StorageTests;
@@ -107,7 +111,7 @@
 		10D4A5742145767C0012C91F /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				105DA5832143F1E300056EB5 /* Storage.swift */,
+				105DA5832143F1E300056EB5 /* CoreDataStorage.swift */,
 				10D4A5872145791B0012C91F /* CoreDataManager.swift */,
 			);
 			path = Core;
@@ -270,7 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				105DA5822143F1DA00056EB5 /* MovieStorage.xcdatamodeld in Sources */,
-				105DA5842143F1E300056EB5 /* Storage.swift in Sources */,
+				105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */,
 				10D4A58D21457D760012C91F /* CoreDataManager+SavedKeyword.swift in Sources */,
 				10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */,
 			);
@@ -280,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				105DA5752143F1BC00056EB5 /* StorageTests.swift in Sources */,
+				10D4A593214595770012C91F /* MovieStorage.xcdatamodeld in Sources */,
+				10D4A58F21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift in Sources */,
+				10D4A59121458D500012C91F /* StorageTestHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

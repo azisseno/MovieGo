@@ -11,9 +11,12 @@ import CoreData
 
 extension CoreDataManager where T: SavedKeyword {
     
+    /// Save keyword to core data
+    ///
+    /// - Parameter keyword: keyword from search bar
     func saveKeyword(_ keyword: String) {
         insertObject.keyword = keyword
-        Storage.shared.save()
+        CoreDataStorage.shared.save()
     }
     
     /// Get keyword data from storage
@@ -30,9 +33,9 @@ extension CoreDataManager where T: SavedKeyword {
         }
         let results: [T]?
         if backgroundFetch {
-            results = try? Storage.shared.backgroundContext.fetch(request)
+            results = try? CoreDataStorage.shared.backgroundContext.fetch(request)
         } else {
-            results = try? Storage.shared.context.fetch(request)
+            results = try? CoreDataStorage.shared.context.fetch(request)
         }
         return results ?? [T]()
     }
@@ -44,12 +47,12 @@ extension CoreDataManager where T: SavedKeyword {
         let request: NSFetchRequest<T> = NSFetchRequest<T>(entityName: entityName)
         let predicate = NSPredicate(format: "%K == %i", "keyword", keyword)
         request.predicate = predicate
-        let results = try? Storage.shared.backgroundContext.fetch(request)
+        let results = try? CoreDataStorage.shared.backgroundContext.fetch(request)
         if let results = results {
             for result in results {
-                Storage.shared.backgroundContext.delete(result)
+                CoreDataStorage.shared.backgroundContext.delete(result)
             }
         }
-        Storage.shared.save()
+        CoreDataStorage.shared.save()
     }
 }

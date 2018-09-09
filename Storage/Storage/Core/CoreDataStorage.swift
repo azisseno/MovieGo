@@ -52,10 +52,14 @@ extension NSPersistentStoreCoordinator {
     }
 }
 
-public struct Storage {
+public struct CoreDataStorage {
     
     /// Shared instance of storage
-    public static var shared = Storage()
+    public static var shared: CoreDataStorage!
+    
+    public static func initInstance() {
+        shared = CoreDataStorage()
+    }
     
     /// Set custom NSPersistentStoreCoordinator
     ///
