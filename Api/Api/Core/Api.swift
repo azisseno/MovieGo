@@ -9,10 +9,15 @@
 import Foundation
 import Alamofire
 
+/// Api is an internal shared instance that
+/// contains base information to request api
 public struct Api {
     
     //MARK: - Config
-    public var headers: [String: String]?
+    var headers: [String: String]? {
+        return nil
+    }
+    
     private var apiKey: String {
         return "2696829a81b1b5827d515ff121700838"
     }
@@ -21,17 +26,14 @@ public struct Api {
         return pApiBasePath
     }
     
-    var imageBasePath: String {
-        return pImageBasePath
-    }
-    
     private var pApiBasePath: String
-    private var pImageBasePath: String
     
-    init(apiBasePath: String,
-         imageBasePath: String) {
+    /// Api constructor,
+    /// api base path is initiated from outside to accomodate backend environment for each target
+    /// - Parameters:
+    ///   - apiBasePath: base path for api request
+    init(apiBasePath: String) {
         pApiBasePath = apiBasePath
-        pImageBasePath = imageBasePath
     }
     
     private static var instance: Api!
@@ -39,13 +41,14 @@ public struct Api {
         return instance
     }
     
-    public static func initInstance(apiBasePath: String,
-                                    imageBasePath: String) {
-        instance = Api(apiBasePath: apiBasePath,
-                       imageBasePath: imageBasePath)
+    public static func initInstance(apiBasePath: String) {
+        instance = Api(apiBasePath: apiBasePath)
     }
     
     //MARK: - Helper
+    /// To create initial parameters
+    ///
+    /// - Returns: initial parameters
     func createParams() -> Parameters {
         return ["api_key": apiKey]
     }

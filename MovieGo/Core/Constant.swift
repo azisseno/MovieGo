@@ -1,0 +1,14 @@
+//
+//  Constant.swift
+//  MovieGo
+//
+//  Created by Azis Senoaji Prasetyotomo on 09/09/18.
+//  Copyright © 2018 Azisseno. All rights reserved.
+//
+
+import Foundation
+
+struct Constant {
+    static let apiBasePath: String = "http://api.themoviedb.org/3"
+    static let imageBasePath: String = "​http://image.tmdb.org/t/p"
+}

@@ -15,11 +15,11 @@ class MovieServicesTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        Api.initInstance(apiBasePath: "http://api.themoviedb.org/3",
-                         imageBasePath: "​http://image.tmdb.org/t/p")
+        Api.initInstance(apiBasePath: "http://api.themoviedb.org/3")
 
     }
     
+    //Test real API get search movie
     func testGetSearchMovie() {
         
         let expectation = self.expectation(description: "Search Movie Called")

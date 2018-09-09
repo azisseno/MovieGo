@@ -17,8 +17,7 @@ class MovieServicesStubTest: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        Api.initInstance(apiBasePath: "http://api.themoviedb.org",
-                         imageBasePath: "​http://image.tmdb.org/t/p")
+        Api.initInstance(apiBasePath: "http://api.themoviedb.org")
         
     }
     

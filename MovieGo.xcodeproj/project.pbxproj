@@ -17,6 +17,7 @@
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
 		106D86392143AAB90080EFAC /* MovieGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86382143AAB90080EFAC /* MovieGoTests.swift */; };
+		10D4A549214551FA0012C91F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A548214551FA0012C91F /* Constant.swift */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		106D86342143AAB90080EFAC /* MovieGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D86382143AAB90080EFAC /* MovieGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGoTests.swift; sourceTree = "<group>"; };
 		106D863A2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10D4A548214551FA0012C91F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				105DA5572143EE2300056EB5 /* MovieGo.entitlements */,
 				105DA5512143EA5C00056EB5 /* Application */,
+				10D4A547214551CF0012C91F /* Core */,
 				106D86222143AAB90080EFAC /* ViewController.swift */,
 				106D86242143AAB90080EFAC /* Main.storyboard */,
 				106D862A2143AAB90080EFAC /* Assets.xcassets */,
@@ -135,6 +138,14 @@
 				106D863A2143AAB90080EFAC /* Info.plist */,
 			);
 			path = MovieGoTests;
+			sourceTree = "<group>";
+		};
+		10D4A547214551CF0012C91F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A548214551FA0012C91F /* Constant.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		25D0CB37EF6843E8A82979DE /* Pods */ = {
@@ -305,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10D4A549214551FA0012C91F /* Constant.swift in Sources */,
 				106D86232143AAB90080EFAC /* ViewController.swift in Sources */,
 				106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */,
 			);
