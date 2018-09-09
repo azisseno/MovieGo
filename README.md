@@ -33,7 +33,7 @@ Never start to create a VIPER project by hand, you should always use a code gene
 
 > I build a generator base on my needs *(read: my application company needs)
 
-Here is ModuleGenerator.swift on the project. Just fire it up with this command
+Here is **ModuleGenerator.swift** on the project. Just fire it up with this command
 ```
 ./ModuleGenerator.swift <Directory/ModuleName> <BaseViewController you want to conform>
 ```
