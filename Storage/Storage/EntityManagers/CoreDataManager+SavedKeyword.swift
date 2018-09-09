@@ -9,12 +9,19 @@
 import Foundation
 import CoreData
 
-class SavedKeywordManager: CoreDataManager<SavedKeyword> {
+public class SavedKeywordManager: CoreDataManager<SavedKeyword> {
+    
     /// Save keyword to core data
     ///
     /// - Parameter keyword: keyword from search bar
-    func saveKeyword(_ keyword: String) {
-        insertObject.keyword = keyword
+    public func saveKeyword(_ keyword: String) {
+        if let existingObject = getData(withKeyword: keyword, backgroundFetch: true).first {
+            existingObject.timestamp = Date()
+        } else {
+            let object = insertObject
+            object.keyword = keyword
+            object.timestamp = Date()
+        }
     }
     
     /// Get keyword data from storage
@@ -23,12 +30,14 @@ class SavedKeywordManager: CoreDataManager<SavedKeyword> {
     ///   - keyword: keyword filter
     ///   - backgroundFetch: which context do you want to use
     /// - Returns: Array of `SavedKeyword` entity
-    func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [SavedKeyword] {
+    public func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [SavedKeyword] {
         let request: NSFetchRequest<SavedKeyword> = NSFetchRequest<SavedKeyword>(entityName: entityName)
         if let keyword = keyword {
             let predicate = NSPredicate(format: "%K == %@", "keyword", keyword)
             request.predicate = predicate
         }
+        let sort = NSSortDescriptor(key: "timestamp", ascending: false)
+        request.sortDescriptors = [sort]
         let results: [SavedKeyword]?
         if backgroundFetch {
             results = try? CoreDataStorage.shared.backgroundContext.fetch(request)
@@ -41,7 +50,7 @@ class SavedKeywordManager: CoreDataManager<SavedKeyword> {
     /// Remove keyword data
     ///
     /// - Parameter keyword: keyword to be deleted
-    func removeData(withKeyword keyword: String) {
+    public func removeData(withKeyword keyword: String) {
         let request: NSFetchRequest<SavedKeyword> = NSFetchRequest<SavedKeyword>(entityName: entityName)
         let predicate = NSPredicate(format: "%K == %@", "keyword", keyword)
         request.predicate = predicate

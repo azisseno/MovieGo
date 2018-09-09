@@ -2,8 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="SavedKeyword" representedClassName="SavedKeyword" syncable="YES" codeGenerationType="class">
         <attribute name="keyword" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
     </entity>
     <elements>
-        <element name="SavedKeyword" positionX="-63" positionY="-18" width="128" height="30"/>
+        <element name="SavedKeyword" positionX="-63" positionY="-18" width="128" height="75"/>
     </elements>
 </model>

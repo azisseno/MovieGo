@@ -13,7 +13,7 @@ import UIKit
 //MARK: - Core Data Manager
 /// A helper that make your life easier in managing your Core Data :D
 /// Just extend this class to easily manage your Entity
-class CoreDataManager<T: NSManagedObject> {
+public class CoreDataManager<T: NSManagedObject> {
     
     /// Entity name in `String` type
     lazy var entityName: String = {
@@ -21,10 +21,10 @@ class CoreDataManager<T: NSManagedObject> {
     }()
     
     /// return an entity object
-    lazy var insertObject: T = {
+    var insertObject: T {
         guard let insertObject = NSEntityDescription.insertNewObject(forEntityName: entityName, into: CoreDataStorage.shared.backgroundContext) as? T else {
             fatalError("Entity doesn't exist")
         }
         return insertObject
-    }()
+    }
 }
