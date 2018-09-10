@@ -15,7 +15,7 @@ extension UIFont {
     /// - Parameter size: Font Size
     /// - Returns: System Font Regular
     static func font(_ size: CGFloat) -> UIFont {
-        return UIFont.systemFont(ofSize: size, weight: .regular)
+        return .systemFont(ofSize: size, weight: .regular)
     }
     
     /// System Font Medium
@@ -23,7 +23,7 @@ extension UIFont {
     /// - Parameter size: Font Size
     /// - Returns: System Font Medium
     static func fontMedium(_ size: CGFloat) -> UIFont {
-        return UIFont.systemFont(ofSize: size, weight: .medium)
+        return .systemFont(ofSize: size, weight: .medium)
     }
     
     /// System Font Bold
@@ -31,6 +31,6 @@ extension UIFont {
     /// - Parameter size: Font Size
     /// - Returns: System Font Bold
     static func fontBold(_ size: CGFloat) -> UIFont {
-        return UIFont.systemFont(ofSize: size, weight: .bold)
+        return .systemFont(ofSize: size, weight: .bold)
     }
 }

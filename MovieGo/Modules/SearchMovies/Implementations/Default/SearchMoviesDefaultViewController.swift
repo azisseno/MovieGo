@@ -32,6 +32,7 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     //MARK: - Setup SubViews
     private func setupTableView() {
+        tableView.estimatedRowHeight = 220
         tableView.dataSource = dataSource
         tableView.tableFooterView = UIView()
         tableView.separatorStyle = .none
@@ -60,7 +61,6 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     }
     
     func reloadData() {
-
         refreshControl?.endRefreshing()
         tableView.reloadData()
     }
@@ -80,6 +80,11 @@ extension SearchMoviesDefaultViewController: UISearchBarDelegate {
 }
 
 extension SearchMoviesDefaultViewController {
+    
+    //MARK: - UITableView Delegate
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     
     //MARK: - UIScrollView Delegate
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {

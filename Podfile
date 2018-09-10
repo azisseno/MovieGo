@@ -10,7 +10,7 @@ workspace 'MovieGo'
 
 target 'MovieGo' do
     api_pod
-    pod 'SDWebImage', '~> 4.0'
+    pod 'Kingfisher', '~> 4.0'
 end
 
 target 'Api' do

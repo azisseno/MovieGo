@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SDWebImage
 
 class MovieListView: UIView, ViewFromNib {
     
@@ -24,18 +23,46 @@ class MovieListView: UIView, ViewFromNib {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupXIB()
+        setupSubViews()
     }
     
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         setupXIB()
+        setupSubViews()
         view?.prepareForInterfaceBuilder()
     }
     
     func set(posterPath: String?,
              title: String,
-             releaseDateLabel: String,
+             releaseDateText: String,
              overview: String) {
+        titleLabel.text = title
+        releaseDateLabel.text = releaseDateText
+        overviewLabel.text = overview
+        guard let posterPath = posterPath else { return }
+        posterImage.loadPoster(placeholder: #imageLiteral(resourceName: "poster_placeholder_ico"),
+                               path: posterPath,
+                               posterSize: .w185)
+    }
+    
+    private func setupSubViews() {
+        // Setup Poster Image View
+        posterImage.contentMode = .scaleAspectFill
+        posterImage.clipsToBounds = true
         
+        // Setup Title Label View
+        titleLabel.font = .fontMedium(17)
+        titleLabel.numberOfLines = 3
+        
+        // Setup Release Date Label View
+        releaseDateLabel.font = .font(14)
+        releaseDateLabel.numberOfLines = 1
+        releaseDateLabel.textColor = .darkGray
+        
+        // Setup Overview Label View
+        overviewLabel.font = .font(14)
+        overviewLabel.numberOfLines = 0
+        overviewLabel.textColor = .darkGray
     }
 }

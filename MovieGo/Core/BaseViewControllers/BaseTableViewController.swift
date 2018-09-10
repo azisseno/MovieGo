@@ -29,22 +29,15 @@ class BaseTableViewController: UITableViewController {
     ///   - placeholder: Search Bar text placeholder
     func setSearchBarOnNavigation(delegate: Any,
                       placeholder: String = "Search") {
-        if let delegate = delegate as? UISearchBarDelegate {
-            searchController.searchBar.delegate = delegate
-        }
-        if let delegate = delegate as? UISearchControllerDelegate {
-            searchController.delegate = delegate
-        }
-        if let delegate = delegate as? UISearchResultsUpdating {
-            searchController.searchResultsUpdater = delegate
-        }
+        
         searchController.searchBar.placeholder = placeholder
+        
+        setDelegate(delegate: delegate)
         
         if #available(iOS 11.0, *) {
             navBar?.navigationBar.prefersLargeTitles = true
             navigationItem.searchController = searchController
             navigationItem.hidesSearchBarWhenScrolling = false
-            
         } else {
             searchController.hidesNavigationBarDuringPresentation = false
             navigationItem.titleView = searchController.searchBar
@@ -54,6 +47,18 @@ class BaseTableViewController: UITableViewController {
             searchController.obscuresBackgroundDuringPresentation = false
         } else {
             searchController.dimsBackgroundDuringPresentation = false
+        }
+    }
+    
+    private func setDelegate(delegate: Any) {
+        if let delegate = delegate as? UISearchBarDelegate {
+            searchController.searchBar.delegate = delegate
+        }
+        if let delegate = delegate as? UISearchControllerDelegate {
+            searchController.delegate = delegate
+        }
+        if let delegate = delegate as? UISearchResultsUpdating {
+            searchController.searchResultsUpdater = delegate
         }
     }
 
