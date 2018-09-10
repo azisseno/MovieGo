@@ -36,8 +36,8 @@ Here is **ModuleGenerator.swift** on the project. Just fire it up with this comm
 It'll generate a module template with the given name in the current directory.
 
 ## MovieGo Target Overview
-Okay, let's take a look the foldering stuff. I seperate MovieGo into 4 main folders.
-
+Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieGo into 4 main folders.
+![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/MovieGoFoldering.png)
  1. **Application** - All about application level management (AppDelegate). Why ? it's only 1 class! Okay, let's take a look to all methods inside AppDelegate, this is super complex.. You may add remote notification handler, setup key, user activity handler, and a lot more complexity in the real world. So yaps. preparing for the complexity from a very beginning is not a crime :)
  2. **Core** - This folder is to accomodate helpers, managers, global constants, or we may say base type stuff!!
  3. **Modules** - The modules in the target (the apps itself)
