@@ -38,6 +38,7 @@
 		10D4A5E72146483E0012C91F /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5E62146483E0012C91F /* MovieListView.swift */; };
 		10D4A5E9214648B50012C91F /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5E8214648B50012C91F /* String.swift */; };
 		10D4A5EB214649AC0012C91F /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5EA214649AC0012C91F /* Date.swift */; };
+		10D4A5ED21464ABF0012C91F /* MovieListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5EC21464ABF0012C91F /* MovieListViewCell.swift */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +103,7 @@
 		10D4A5E62146483E0012C91F /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		10D4A5E8214648B50012C91F /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		10D4A5EA214649AC0012C91F /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		10D4A5EC21464ABF0012C91F /* MovieListViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewCell.swift; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			children = (
 				10D4A5E4214644940012C91F /* MovieListView.xib */,
 				10D4A5E62146483E0012C91F /* MovieListView.swift */,
+				10D4A5EC21464ABF0012C91F /* MovieListViewCell.swift */,
 			);
 			path = MovieListView;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				10D4A5D1214620D40012C91F /* ViewFromNib.swift in Sources */,
 				10D4A59621460A4C0012C91F /* BaseTableViewController.swift in Sources */,
 				10D4A5E9214648B50012C91F /* String.swift in Sources */,
+				10D4A5ED21464ABF0012C91F /* MovieListViewCell.swift in Sources */,
 				10D4A5CC21461B180012C91F /* SearchMoviesInteractor.swift in Sources */,
 				10D4A59821460A5E0012C91F /* BaseNavigationViewController.swift in Sources */,
 				10D4A549214551FA0012C91F /* Constant.swift in Sources */,

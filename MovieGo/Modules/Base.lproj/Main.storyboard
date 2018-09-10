@@ -18,12 +18,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="62" id="KBp-8K-0WN">
-                                <rect key="frame" x="0.0" y="28" width="375" height="62"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="168" id="KBp-8K-0WN" customClass="MovieListViewCell" customModule="MovieGo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="168"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KBp-8K-0WN" id="LzR-J3-hCP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="61.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xW6-wi-uaD" customClass="MovieListView" customModule="MovieGo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="xW6-wi-uaD" secondAttribute="trailing" id="9eV-Yq-zwn"/>
+                                        <constraint firstItem="xW6-wi-uaD" firstAttribute="leading" secondItem="LzR-J3-hCP" secondAttribute="leading" id="AaD-Ee-IWL"/>
+                                        <constraint firstItem="xW6-wi-uaD" firstAttribute="top" secondItem="LzR-J3-hCP" secondAttribute="top" id="Aw4-01-S4H"/>
+                                        <constraint firstAttribute="bottom" secondItem="xW6-wi-uaD" secondAttribute="bottom" id="b8H-5t-AQl"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>

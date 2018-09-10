@@ -6,4 +6,19 @@
 //  Copyright © 2018 Azisseno. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Api
+
+class MovieListDataSource: NSObject, UITableViewDataSource {
+    
+    var movies: [Movie] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieListViewCell
+        return cell
+    }
+}
