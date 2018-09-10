@@ -12,7 +12,7 @@ Everyone is comparing architectures, but that's not what people should do. As fa
 
 Let's assume that this project will be real big project. Then yes! the real problem starts if your app grows and more and more components get into the game. So I choose Viper as a design pattern for this project to achieve this requirement.
 
-## Proejcts
+## Project
 Let's take a look to the picture above (again). I'm assuming that this project is initial project for a growing company. So I have to start this project with **Non Monolithic** workplace to cut off technical debt in the future as well. This project is seperated by 3 projects namely, `Api`, `Storage`, and `MovieGo`:
 
  **1. Api** - All about api requests are placed here
