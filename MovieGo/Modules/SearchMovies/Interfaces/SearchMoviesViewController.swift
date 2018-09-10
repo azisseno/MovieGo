@@ -6,10 +6,10 @@
 //  Copyright © 2018. Azis Senoaji Prasetyotomo. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol SearchMoviesViewController: class {
 
     var presenter: SearchMoviesPresenter? { get set }
-    var dataSource: UITableViewDataSource! { get set }
+
 }
