@@ -121,14 +121,10 @@
 		106D861F2143AAB80080EFAC /* MovieGo */ = {
 			isa = PBXGroup;
 			children = (
-				105DA5572143EE2300056EB5 /* MovieGo.entitlements */,
-				106D862F2143AAB90080EFAC /* Info.plist */,
-				106D862A2143AAB90080EFAC /* Assets.xcassets */,
 				105DA5512143EA5C00056EB5 /* Application */,
 				10D4A547214551CF0012C91F /* Core */,
 				10D4A55D214569F20012C91F /* Modules */,
-				106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */,
-				106D86242143AAB90080EFAC /* Main.storyboard */,
+				10D4A59D2146119C0012C91F /* Resources */,
 			);
 			path = MovieGo;
 			sourceTree = "<group>";
@@ -145,8 +141,9 @@
 		10D4A547214551CF0012C91F /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				10D4A59F2146120C0012C91F /* Constants */,
+				10D4A59E214612030012C91F /* Main */,
 				10D4A59421460A360012C91F /* BaseViewControllers */,
-				10D4A548214551FA0012C91F /* Constant.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -165,6 +162,33 @@
 				10D4A59721460A5E0012C91F /* BaseNavigationViewController.swift */,
 			);
 			path = BaseViewControllers;
+			sourceTree = "<group>";
+		};
+		10D4A59D2146119C0012C91F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */,
+				106D862A2143AAB90080EFAC /* Assets.xcassets */,
+				105DA5572143EE2300056EB5 /* MovieGo.entitlements */,
+				106D862F2143AAB90080EFAC /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10D4A59E214612030012C91F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				106D86242143AAB90080EFAC /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		10D4A59F2146120C0012C91F /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A548214551FA0012C91F /* Constant.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		25D0CB37EF6843E8A82979DE /* Pods */ = {
