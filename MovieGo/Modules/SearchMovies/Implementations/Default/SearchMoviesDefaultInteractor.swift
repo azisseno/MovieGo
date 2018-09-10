@@ -38,6 +38,9 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
 
     func fetchMovie(page: Int, keyword: String) {
         guard requestState != .loading else { return }
+        if !Connectivity.isConnectedToInternet {
+            presenter?.handleErrorRequest(response: Connectivity.error)
+        }
         requestState = .loading
         request = MovieServices.getSearchMovie(
             query: keyword,
