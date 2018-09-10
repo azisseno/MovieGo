@@ -16,5 +16,5 @@ protocol SearchMoviesViewController: class {
     func setMovies(_ movies: [Movie], totalPages: Int, totalResults: Int)
     func appendMovies(_ movies: [Movie])
     func reloadData()
-
+    func errorRequestHandler(_ message: String)
 }

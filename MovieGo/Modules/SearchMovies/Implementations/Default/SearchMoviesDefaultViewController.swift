@@ -64,6 +64,11 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
         refreshControl?.endRefreshing()
         tableView.reloadData()
     }
+    
+    func errorRequestHandler(_ errorMessage: String) {
+        showSnackAlert(message: errorMessage)
+        refreshControl?.endRefreshing()
+    }
 }
 
 extension SearchMoviesDefaultViewController: UISearchBarDelegate {

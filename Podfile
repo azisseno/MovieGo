@@ -11,6 +11,7 @@ workspace 'MovieGo'
 target 'MovieGo' do
     api_pod
     pod 'Kingfisher', '~> 4.0'
+    pod 'TTGSnackbar', '1.7.3'
 end
 
 target 'Api' do

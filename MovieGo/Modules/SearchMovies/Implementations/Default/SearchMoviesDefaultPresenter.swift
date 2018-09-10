@@ -38,4 +38,7 @@ class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
         view?.reloadData()
     }
 
+    func handleErrorRequest(response: ErrorResponse) {
+        view?.errorRequestHandler(response.message)
+    }
 }

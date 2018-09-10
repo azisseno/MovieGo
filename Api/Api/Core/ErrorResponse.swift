@@ -14,7 +14,7 @@ public struct ErrorResponse {
     public var status: Int
     public var message: String
 
-    init(status: Int, message: String) {
+    public init(status: Int, message: String) {
         self.status = status
         self.message = message
     }

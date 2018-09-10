@@ -19,5 +19,5 @@ protocol SearchMoviesPresenter: class {
     func onReachBottomScroll()
     func onPullToRefresh()
     func handleSuccessRequest(response: MovieResponse)
-    
+    func handleErrorRequest(response: ErrorResponse)
 }

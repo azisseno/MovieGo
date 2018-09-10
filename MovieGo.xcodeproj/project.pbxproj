@@ -18,6 +18,9 @@
 		105DA5962143F36600056EB5 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA58F2143F35400056EB5 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		105DA5A32143F3B700056EB5 /* Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5A12143F3B400056EB5 /* Api.framework */; };
 		105DA5A42143F3B700056EB5 /* Api.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5A12143F3B400056EB5 /* Api.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1066C4E82146B560001250A5 /* SnackBarManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4E72146B560001250A5 /* SnackBarManagers.swift */; };
+		1066C4EA2146B5C3001250A5 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4E92146B5C3001250A5 /* Connectivity.swift */; };
+		1066C4EC2146B61D001250A5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4EB2146B61D001250A5 /* UIColor.swift */; };
 		106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86202143AAB90080EFAC /* AppDelegate.swift */; };
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
@@ -84,6 +87,9 @@
 		10000ED72146A0B200111246 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		105DA58F2143F35400056EB5 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		105DA5A12143F3B400056EB5 /* Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1066C4E72146B560001250A5 /* SnackBarManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarManagers.swift; sourceTree = "<group>"; };
+		1066C4E92146B5C3001250A5 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		1066C4EB2146B61D001250A5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		106D861D2143AAB80080EFAC /* MovieGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D86202143AAB90080EFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		106D862A2143AAB90080EFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -306,6 +312,8 @@
 			children = (
 				10D4A5D0214620D40012C91F /* ViewFromNib.swift */,
 				10000ECA21465B1200111246 /* RequestState.swift */,
+				1066C4E72146B560001250A5 /* SnackBarManagers.swift */,
+				1066C4E92146B5C3001250A5 /* Connectivity.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				10000ECC2146658E00111246 /* UIScrollView.swift */,
 				10000ED521469EC800111246 /* UIFont.swift */,
 				10000ED72146A0B200111246 /* UIImageView.swift */,
+				1066C4EB2146B61D001250A5 /* UIColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -497,12 +506,14 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/TTGSnackbar/TTGSnackbar.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGSnackbar.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -525,13 +536,16 @@
 				10D4A5CC21461B180012C91F /* SearchMoviesInteractor.swift in Sources */,
 				10D4A59821460A5E0012C91F /* BaseNavigationViewController.swift in Sources */,
 				10D4A549214551FA0012C91F /* Constant.swift in Sources */,
+				1066C4EC2146B61D001250A5 /* UIColor.swift in Sources */,
 				10D4A5C521461B180012C91F /* SearchMoviesDefaultRouter.swift in Sources */,
+				1066C4EA2146B5C3001250A5 /* Connectivity.swift in Sources */,
 				10D4A5DB214628560012C91F /* MovieListDataSource.swift in Sources */,
 				10D4A5C821461B180012C91F /* SearchMoviesDefaultBuilder.swift in Sources */,
 				10D4A5CB21461B180012C91F /* SearchMoviesRouter.swift in Sources */,
 				10D4A5D9214628430012C91F /* SearchSuggestionDataSource.swift in Sources */,
 				106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */,
 				10D4A5C921461B180012C91F /* SearchMoviesViewController.swift in Sources */,
+				1066C4E82146B560001250A5 /* SnackBarManagers.swift in Sources */,
 				10D4A5D6214622750012C91F /* InfoTextView.swift in Sources */,
 				10D4A5CA21461B180012C91F /* SearchMoviesPresenter.swift in Sources */,
 				10D4A5C621461B180012C91F /* SearchMoviesDefaultViewController.swift in Sources */,

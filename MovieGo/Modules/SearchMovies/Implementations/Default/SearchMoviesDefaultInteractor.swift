@@ -26,26 +26,17 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
         }
         fetchMovie(
             page: 1,
-            keyword: currentKeyword,
-            onFailure: { error in
-                
-            }
-        )
+            keyword: currentKeyword)
     }
     
     func fetchMoreIfNeeded() {
         guard response.page <= response.total_pages else { return }
         fetchMovie(
             page: response.page + 1,
-            keyword: currentKeyword,
-            onFailure: { error in
-                
-            }
-        )
+            keyword: currentKeyword)
     }
 
-    func fetchMovie(page: Int, keyword: String,
-                    onFailure: @escaping ((ErrorResponse) -> ())) {
+    func fetchMovie(page: Int, keyword: String) {
         guard requestState != .loading else { return }
         requestState = .loading
         request = MovieServices.getSearchMovie(
@@ -58,7 +49,7 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
             },
             onFailure: { [weak self] error in
                 self?.requestState = .error
-                onFailure(error)
+                self?.presenter?.handleErrorRequest(response: error)
             }
         ).call()
     }

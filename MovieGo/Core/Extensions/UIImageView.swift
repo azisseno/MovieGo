@@ -28,10 +28,15 @@ extension UIImageView {
                     path: String,
                     posterSize: PosterSize) {
         let urlString = Constant.imageBasePath + "/\(posterSize.rawValue)" + path
-        let resource = ImageResource(downloadURL: URL(string: urlString)!)
-        kf.setImage(with: resource,
-                    placeholder: placeholder,
-                    options: [.transition(.fade(0.2))])
+        do {
+            let url = try urlString.asURL()
+            let resource = ImageResource(downloadURL: url)
+            kf.setImage(with: resource,
+                        placeholder: placeholder,
+                        options: [.transition(.fade(0.2))])
+        } catch {
+            image = placeholder
+        }
         
     }
 }
