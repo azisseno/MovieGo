@@ -9,6 +9,9 @@
 import UIKit
 
 extension UIView {
+    /// Instantiate our Nib based View
+    ///
+    /// - Returns: The View
     class func fromNib<T: UIView & ViewFromNib>() -> T {
         let view = T()
         view.awakeFromNib()

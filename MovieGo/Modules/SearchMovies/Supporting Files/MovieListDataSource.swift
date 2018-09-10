@@ -9,10 +9,12 @@
 import UIKit
 import Api
 
+/// Data Source for Movie List
 class MovieListDataSource: NSObject, UITableViewDataSource {
     
     var movies: [Movie] = []
     
+    //MARK: - UITableView Data Source
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }

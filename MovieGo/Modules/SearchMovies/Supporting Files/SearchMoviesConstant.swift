@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Search Movies Module Constant
 struct SearchMoviesConstant {
 
     static let notFoundText: String = """

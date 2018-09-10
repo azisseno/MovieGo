@@ -9,6 +9,10 @@
 import UIKit
 
 extension UIScrollView {
+    
+    /// ScrollView is Reaching Bottom
+    ///
+    /// - Returns: Bool
     func isReachingBottom() -> Bool {
         return contentOffset.y >= 0
             && contentOffset.y >= (contentSize.height - frame.size.height)

@@ -9,6 +9,11 @@
 import UIKit
 
 extension String {
+    
+    /// String to Date type
+    ///
+    /// - Parameter format: Date Formatter String
+    /// - Returns: Date type
     func toDate(withFormat format: String = Constant.simpleDateFormat) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
