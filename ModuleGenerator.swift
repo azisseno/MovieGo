@@ -71,16 +71,16 @@ func fileComment(for module: String, type: String) -> String {
     let year = String(calendar.component(.year, from: today))
     let month = String(format: "%02d", calendar.component(.month, from: today))
     let day = String(format: "%02d", calendar.component(.day, from: today))
-    
+
     return """
-    //
-    //  \(module)\(type).swift
-    //  \(module)
-    //
-    //  Created by \(userName) on \(year). \(month). \(day)..
-    //  Copyright © \(year). \(userName). All rights reserved.
-    //
-    """
+        //
+        //  \(module)\(type).swift
+        //  \(module)
+        //
+        //  Created by \(userName) on \(year). \(month). \(day)..
+        //  Copyright © \(year). \(userName). All rights reserved.
+        //
+        """
 }
 
 let interfaceRouter = """
@@ -90,7 +90,7 @@ import Foundation
 
 protocol \(module)Router {
 
-var presenter: \(module)Presenter? { get set }
+    var presenter: \(module)Presenter? { get set }
 }
 
 """
@@ -102,9 +102,9 @@ import Foundation
 
 protocol \(module)Presenter: class {
 
-var router: \(module)Router? { get set }
-var interactor: \(module)Interactor? { get set }
-var view: \(module)ViewController? { get set }
+    var router: \(module)Router? { get set }
+    var interactor: \(module)Interactor? { get set }
+    var view: \(module)ViewController? { get set }
 }
 
 """
@@ -116,7 +116,7 @@ import Foundation
 
 protocol \(module)Interactor {
 
-var presenter: \(module)Presenter? { get set }
+    var presenter: \(module)Presenter? { get set }
 }
 
 """
@@ -128,7 +128,7 @@ import Foundation
 
 protocol \(module)ViewController: class {
 
-var presenter: \(module)Presenter? { get set }
+    var presenter: \(module)Presenter? { get set }
 }
 
 """
@@ -141,24 +141,24 @@ import UIKit
 
 class \(module)DefaultBuilder {
 
-func main() -> UIViewController {
-let view = \(module)DefaultViewController()
-let interactor = \(module)DefaultInteractor()
-let presenter = \(module)DefaultPresenter()
-let router = \(module)DefaultRouter()
-let controller = UINavigationController(rootViewController: view)
+    func main() -> UIViewController {
+        let view = \(module)DefaultViewController()
+        let interactor = \(module)DefaultInteractor()
+        let presenter = \(module)DefaultPresenter()
+        let router = \(module)DefaultRouter()
+        let controller = UINavigationController(rootViewController: view)
 
-view.presenter = presenter
+        view.presenter = presenter
 
-presenter.interactor = interactor
-presenter.view = view
-presenter.router = router
+        presenter.interactor = interactor
+        presenter.view = view
+        presenter.router = router
 
-router.presenter = presenter
-router.viewController = view
+        router.presenter = presenter
+        router.viewController = view
 
-return controller
-}
+        return controller
+    }
 }
 
 """
@@ -171,8 +171,8 @@ import UIKit
 
 class \(module)DefaultRouter: \(module)Router {
 
-weak var presenter: \(module)Presenter?
-weak var viewController: UIViewController?
+    weak var presenter: \(module)Presenter?
+    weak var viewController: UIViewController?
 
 }
 
@@ -186,9 +186,9 @@ import Foundation
 
 class \(module)DefaultPresenter: \(module)Presenter {
 
-var router: \(module)Router?
-var interactor: \(module)Interactor?
-weak var view: \(module)ViewController?
+    var router: \(module)Router?
+    var interactor: \(module)Interactor?
+    weak var view: \(module)ViewController?
 }
 
 """
@@ -202,7 +202,7 @@ import UIKit
 
 class \(module)DefaultInteractor: \(module)Interactor {
 
-weak var presenter: \(module)Presenter?
+    weak var presenter: \(module)Presenter?
 
 }
 
@@ -216,22 +216,23 @@ import UIKit
 
 class \(module)DefaultViewController: \(controllerType), \(module)ViewController {
 
-var presenter: \(module)Presenter?
+    var presenter: \(module)Presenter?
 
 }
 
 """
 
+
 do {
     try [moduleUrl, interfacesUrl, implmentationsUrl, defaultUrl].forEach {
         try fileManager.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
     }
-    
+
     try interfaceRouter.write(to: interfaceRouterUrl, atomically: true, encoding: .utf8)
     try interfacePresenter.write(to: interfacePresenterUrl, atomically: true, encoding: .utf8)
     try interfaceInteractor.write(to: interfaceInteractorUrl, atomically: true, encoding: .utf8)
     try interfaceViewController.write(to: interfaceViewControllerUrl, atomically: true, encoding: .utf8)
-    
+
     try defaultBuilder.write(to: defaultBuilderUrl, atomically: true, encoding: .utf8)
     try defaultRouter.write(to: defaultRouterUrl, atomically: true, encoding: .utf8)
     try defaultPresenter.write(to: defaultPresenterUrl, atomically: true, encoding: .utf8)
@@ -241,3 +242,4 @@ do {
 catch {
     print(error.localizedDescription)
 }
+
