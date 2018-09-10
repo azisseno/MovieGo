@@ -14,6 +14,11 @@ class BaseTableViewController: UITableViewController {
     final var navBar: BaseNavigationViewController? {
         return navigationController as? BaseNavigationViewController
     }
+    
+    /// Used as searchResultsController of SearchController
+    var searchResultsController: UIViewController? {
+        return nil
+    }
 
     lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
     

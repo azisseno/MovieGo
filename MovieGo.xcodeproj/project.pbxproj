@@ -12,6 +12,7 @@
 		10000ECF2146718600111246 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10000ECE2146718600111246 /* Movies.storyboard */; };
 		10000ED1214674A800111246 /* AppDelegate+LaunchSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000ED0214674A800111246 /* AppDelegate+LaunchSetup.swift */; };
 		10000ED4214676CE00111246 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10000ED2214676CE00111246 /* Main.storyboard */; };
+		10000ED621469EC800111246 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000ED521469EC800111246 /* UIFont.swift */; };
 		105DA5952143F36600056EB5 /* Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA58F2143F35400056EB5 /* Storage.framework */; };
 		105DA5962143F36600056EB5 /* Storage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA58F2143F35400056EB5 /* Storage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		105DA5A32143F3B700056EB5 /* Api.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 105DA5A12143F3B400056EB5 /* Api.framework */; };
@@ -78,6 +79,7 @@
 		10000ECE2146718600111246 /* Movies.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		10000ED0214674A800111246 /* AppDelegate+LaunchSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+LaunchSetup.swift"; sourceTree = "<group>"; };
 		10000ED3214676CE00111246 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		10000ED521469EC800111246 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		105DA58F2143F35400056EB5 /* Storage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Storage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		105DA5A12143F3B400056EB5 /* Api.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Api.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D861D2143AAB80080EFAC /* MovieGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -331,6 +333,7 @@
 				10D4A5E8214648B50012C91F /* String.swift */,
 				10D4A5EA214649AC0012C91F /* Date.swift */,
 				10000ECC2146658E00111246 /* UIScrollView.swift */,
+				10000ED521469EC800111246 /* UIFont.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -490,11 +493,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -530,6 +535,7 @@
 				10D4A5E72146483E0012C91F /* MovieListView.swift in Sources */,
 				10D4A5C421461B180012C91F /* SearchMoviesDefaultPresenter.swift in Sources */,
 				10000ECD2146658E00111246 /* UIScrollView.swift in Sources */,
+				10000ED621469EC800111246 /* UIFont.swift in Sources */,
 				10D4A5E2214636D80012C91F /* UIView.swift in Sources */,
 				10000ED1214674A800111246 /* AppDelegate+LaunchSetup.swift in Sources */,
 				10D4A5C721461B180012C91F /* SearchMoviesDefaultInteractor.swift in Sources */,

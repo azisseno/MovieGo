@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieListView: UIView, ViewFromNib {
     
@@ -18,7 +19,7 @@ class MovieListView: UIView, ViewFromNib {
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var releaseDateLabel: UILabel!
-    
+    @IBOutlet weak var overviewLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +30,12 @@ class MovieListView: UIView, ViewFromNib {
         super.prepareForInterfaceBuilder()
         setupXIB()
         view?.prepareForInterfaceBuilder()
+    }
+    
+    func set(posterPath: String?,
+             title: String,
+             releaseDateLabel: String,
+             overview: String) {
+        
     }
 }
