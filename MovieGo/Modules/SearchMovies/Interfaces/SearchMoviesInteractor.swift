@@ -11,4 +11,7 @@ import Foundation
 protocol SearchMoviesInteractor {
 
     var presenter: SearchMoviesPresenter? { get set }
+    
+    func fetchMovie(page: Int, keyword: String)
+
 }

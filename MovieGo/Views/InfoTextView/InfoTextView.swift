@@ -12,6 +12,10 @@ import UIKit
 class InfoTextView: UIView, ViewFromNib {
     
     var view: UIView?
+    var nibName: String {
+        return "InfoTextView"
+    }
+    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var icon: UIImageView!
     

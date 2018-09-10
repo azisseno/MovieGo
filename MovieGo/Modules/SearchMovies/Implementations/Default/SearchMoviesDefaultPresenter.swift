@@ -9,11 +9,13 @@
 import Foundation
 
 class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
-    func onTapSearchButton() {
-        //TODO: - Search implementation
-    }
 
     var router: SearchMoviesRouter?
     var interactor: SearchMoviesInteractor?
     weak var view: SearchMoviesViewController?
+    
+    func onTapSearchButton() {
+        //TODO: - Search implementation
+    }
+
 }

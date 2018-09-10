@@ -15,4 +15,5 @@ protocol SearchMoviesPresenter: class {
     var view: SearchMoviesViewController? { get set }
     
     func onTapSearchButton()
+    
 }

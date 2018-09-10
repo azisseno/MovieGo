@@ -15,12 +15,7 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     var dataSource: UITableViewDataSource!
     
     //MARK: - SubView instances
-    lazy var suggestionView: InfoTextView = {
-        guard let view = InfoTextView.instantiateFromNib() else {
-            fatalError("Nib is doesn't exist")
-        }
-        return view
-    }()
+    lazy var suggestionView: InfoTextView = InfoTextView.fromNib()
     
     //MARK: - SuperClass Methods
     override func viewDidLoad() {
@@ -58,4 +53,9 @@ extension SearchMoviesDefaultViewController {
         suggestionView.label.text = "Suggestions"
         return suggestionView
     }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
+
 }

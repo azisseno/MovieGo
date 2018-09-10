@@ -33,8 +33,7 @@
 		10D4A5D6214622750012C91F /* InfoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5D5214622750012C91F /* InfoTextView.swift */; };
 		10D4A5D9214628430012C91F /* SearchSuggestionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5D8214628430012C91F /* SearchSuggestionDataSource.swift */; };
 		10D4A5DB214628560012C91F /* MovieListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5DA214628560012C91F /* MovieListDataSource.swift */; };
-		10D4A5DE214629950012C91F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5DD214629950012C91F /* UIView.swift */; };
-		10D4A5E021462A2C0012C91F /* UINib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5DF21462A2C0012C91F /* UINib.swift */; };
+		10D4A5E2214636D80012C91F /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5E1214636D80012C91F /* UIView.swift */; };
 		E2C0AA2EAF459C34F52CA708 /* Pods_MovieGo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,8 +93,7 @@
 		10D4A5D5214622750012C91F /* InfoTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTextView.swift; sourceTree = "<group>"; };
 		10D4A5D8214628430012C91F /* SearchSuggestionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionDataSource.swift; sourceTree = "<group>"; };
 		10D4A5DA214628560012C91F /* MovieListDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListDataSource.swift; sourceTree = "<group>"; };
-		10D4A5DD214629950012C91F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		10D4A5DF21462A2C0012C91F /* UINib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINib.swift; sourceTree = "<group>"; };
+		10D4A5E1214636D80012C91F /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		686AA3F2F5CAB5BC2CBF45F8 /* Pods_MovieGo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7717857F7D551D99CC415FF3 /* Pods_MovieGoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieGoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBC3E064339F67766F8841B1 /* Pods-MovieGo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieGo.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieGo/Pods-MovieGo.release.xcconfig"; sourceTree = "<group>"; };
@@ -305,8 +303,7 @@
 		10D4A5DC2146298B0012C91F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				10D4A5DD214629950012C91F /* UIView.swift */,
-				10D4A5DF21462A2C0012C91F /* UINib.swift */,
+				10D4A5E1214636D80012C91F /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -485,7 +482,6 @@
 				10D4A5D1214620D40012C91F /* ViewFromNib.swift in Sources */,
 				10D4A59621460A4C0012C91F /* BaseTableViewController.swift in Sources */,
 				10D4A5CC21461B180012C91F /* SearchMoviesInteractor.swift in Sources */,
-				10D4A5E021462A2C0012C91F /* UINib.swift in Sources */,
 				10D4A59821460A5E0012C91F /* BaseNavigationViewController.swift in Sources */,
 				10D4A549214551FA0012C91F /* Constant.swift in Sources */,
 				10D4A5C521461B180012C91F /* SearchMoviesDefaultRouter.swift in Sources */,
@@ -499,7 +495,7 @@
 				10D4A5CA21461B180012C91F /* SearchMoviesPresenter.swift in Sources */,
 				10D4A5C621461B180012C91F /* SearchMoviesDefaultViewController.swift in Sources */,
 				10D4A5C421461B180012C91F /* SearchMoviesDefaultPresenter.swift in Sources */,
-				10D4A5DE214629950012C91F /* UIView.swift in Sources */,
+				10D4A5E2214636D80012C91F /* UIView.swift in Sources */,
 				10D4A5C721461B180012C91F /* SearchMoviesDefaultInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

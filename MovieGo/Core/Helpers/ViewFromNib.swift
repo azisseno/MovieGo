@@ -35,9 +35,4 @@ extension ViewFromNib where Self: UIView {
             withOwner: self,
             options: nil).first as? UIView
     }
-    
-    /// Nib name must be same with UIView class
-    var nibName: String {
-        return String(describing: self)
-    }
 }

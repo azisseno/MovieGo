@@ -8,9 +8,21 @@
 
 import Foundation
 import UIKit
+import Api
 
 class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
 
     weak var presenter: SearchMoviesPresenter?
 
+    func fetchMovie(page: Int, keyword: String) {
+        MovieServices.getSearchMovie(
+            query: keyword,
+            page: page,
+            onSuccess: { movieResponse in
+                
+            }, onFailure: { error in
+            
+            }
+        ).call()
+    }
 }
