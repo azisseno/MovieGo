@@ -15,7 +15,7 @@ struct Constant {
     static let imageBasePath: String = "http://image.tmdb.org/t/p"
     
     //Mark: - Date Format
-    static let simpleDateFormat: String = "yyyy-mm-dd"
+    static let simpleDateFormat: String = "yyyy-MM-dd"
     static let releaseDateFormat: String = "MMMM dd, yyyy"
 
 }

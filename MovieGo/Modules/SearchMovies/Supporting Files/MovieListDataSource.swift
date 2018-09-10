@@ -22,9 +22,17 @@ class MovieListDataSource: NSObject, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as! MovieListViewCell
         let movie = movies[indexPath.row]
+        
+        var releaseDateText = "Release Date:\n"
+        if movie.release_date.isEmpty {
+            releaseDateText += "Unknown"
+        } else {
+            releaseDateText += movie.release_date.toDate()
+                .toString(withFormat: Constant.releaseDateFormat)
+        }
         cell.movieListView.set(posterPath: movie.poster_path,
                                title: movie.title,
-                               releaseDateText: movie.release_date,
+                               releaseDateText: releaseDateText,
                                overview: movie.overview)
         cell.selectionStyle = .none
         return cell

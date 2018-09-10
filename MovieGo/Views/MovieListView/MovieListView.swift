@@ -50,7 +50,7 @@ class MovieListView: UIView, ViewFromNib {
         
         // Setup Release Date Label View
         releaseDateLabel.font = .font(14)
-        releaseDateLabel.numberOfLines = 1
+        releaseDateLabel.numberOfLines = 2
         releaseDateLabel.textColor = .darkGray
         
         // Setup Overview Label View

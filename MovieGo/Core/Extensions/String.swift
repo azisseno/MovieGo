@@ -18,7 +18,7 @@ extension String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
         guard let date = dateFormatter.date(from: self) else {
-            fatalError("Wrong format, please check")
+            return Date()
         }
         return date
     }
