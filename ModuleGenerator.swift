@@ -124,7 +124,7 @@ protocol \(module)Interactor {
 let interfaceViewController = """
 \(fileComment(for: module, type: "ViewController"))
 
-import Foundation
+import UIKit
 
 protocol \(module)ViewController: class {
 
