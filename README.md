@@ -42,6 +42,8 @@ Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieG
  2. **Core** - This folder is to accomodate helpers, managers, global constants, or we may say base type stuff!!
  3. **Modules** - The modules in the target (the apps itself)
  4. **Resources** - All about target resources without 3 classifications above :D
+ 5. **Views** - The more engineers and designers we have, the more unconsistent design we would have <span style="color:red">(IF WE DON'T HAVE GOOD PRODUCT DESIGN PRINCIPLE)</span>. Yaps in this case, I adopt one of principle from [atomic design](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjVuNqfwK_dAhVBQH0KHcF2A4MQFjABegQIBxAB&url=http://atomicdesign.bradfrost.com/&usg=AOvVaw32gtwaq63j-VXtSOmbbclN) by brad forst.  `Every single view should be reusable`.  So that, I group all views in the one place
 
 Why I made `BaseTableViewController` ? Yaps, it's a part of my sense of long term vision. Have you ever think that someday business requirement changes our app radically? So .... instead of doing massive refactoring with copy paste stuff, why don't we prepare a base controller to simplify our job? Of course! since it's only for an assignment, I only create 1 base controllers. But in the real life, we should *"Base-rized"* all of controllers
+
 
