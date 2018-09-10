@@ -146,7 +146,9 @@ class \(module)DefaultBuilder {
         let interactor = \(module)DefaultInteractor()
         let presenter = \(module)DefaultPresenter()
         let router = \(module)DefaultRouter()
-        let controller = UINavigationController(rootViewController: view)
+        let controller = BaseNavigationViewController(rootViewController: view)
+
+        interactor.presenter = presenter
 
         view.presenter = presenter
 

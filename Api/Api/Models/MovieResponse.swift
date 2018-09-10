@@ -10,8 +10,8 @@ import Foundation
 
 /// Response Model from GET search movie api
 public struct MovieResponse: Codable {
-    var page: Int = 0
-    var total_results: Int
-    var total_pages: Int
-    var results: [Movie] = []
+    public var page: Int = 0
+    public var total_results: Int
+    public var total_pages: Int
+    public var results: [Movie] = []
 }

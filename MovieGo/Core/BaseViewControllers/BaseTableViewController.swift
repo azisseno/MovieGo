@@ -10,7 +10,6 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
     
-    
     /// Return nearest BaseNavigationViewController
     final var navBar: BaseNavigationViewController? {
         return navigationController as? BaseNavigationViewController

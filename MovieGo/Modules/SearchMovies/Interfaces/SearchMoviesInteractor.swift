@@ -12,6 +12,6 @@ protocol SearchMoviesInteractor {
 
     var presenter: SearchMoviesPresenter? { get set }
     
-    func fetchMovie(page: Int, keyword: String)
-
+    func fetchMoreIfNeeded()
+    func reFetch(keyword: String?)
 }

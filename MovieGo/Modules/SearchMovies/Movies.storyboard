@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aK4-We-ejl">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14113"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search Movies Default View Controller-->
+        <scene sceneID="XNI-G8-tIA">
+            <objects>
+                <tableViewController storyboardIdentifier="MoviesController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aK4-We-ejl" customClass="SearchMoviesDefaultViewController" customModule="MovieGo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Top-2s-t4v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="movieCell" rowHeight="168" id="3cU-vu-XR1" customClass="MovieListViewCell" customModule="MovieGo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="168"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cU-vu-XR1" id="CXA-FZ-Urg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXm-ae-oU6" customClass="MovieListView" customModule="MovieGo" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="167.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MXm-ae-oU6" firstAttribute="top" secondItem="CXA-FZ-Urg" secondAttribute="top" id="Dpe-wM-79b"/>
+                                        <constraint firstItem="MXm-ae-oU6" firstAttribute="leading" secondItem="CXA-FZ-Urg" secondAttribute="leading" id="Gmi-0q-uEo"/>
+                                        <constraint firstAttribute="trailing" secondItem="MXm-ae-oU6" secondAttribute="trailing" id="kKT-lI-ATH"/>
+                                        <constraint firstAttribute="bottom" secondItem="MXm-ae-oU6" secondAttribute="bottom" id="wJu-FX-k6C"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieListView" destination="MXm-ae-oU6" id="xFe-0G-4U3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="aK4-We-ejl" id="Eff-Wc-oqv"/>
+                            <outlet property="delegate" destination="aK4-We-ejl" id="MRg-B5-z5E"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Xil-pF-7kc"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Njl-Gz-1GJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1877.5999999999999" y="-106.59670164917542"/>
+        </scene>
+    </scenes>
+</document>

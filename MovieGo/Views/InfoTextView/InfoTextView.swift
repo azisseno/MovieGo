@@ -8,7 +8,6 @@
 
 import UIKit
 
-@IBDesignable
 class InfoTextView: UIView, ViewFromNib {
     
     var view: UIView?

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Api
 
 protocol SearchMoviesPresenter: class {
 
@@ -14,6 +15,9 @@ protocol SearchMoviesPresenter: class {
     var interactor: SearchMoviesInteractor? { get set }
     var view: SearchMoviesViewController? { get set }
     
-    func onTapSearchButton()
+    func onTapSearchButton(keyword: String)
+    func onReachBottomScroll()
+    func onPullToRefresh()
+    func handleSuccessRequest(response: MovieResponse)
     
 }

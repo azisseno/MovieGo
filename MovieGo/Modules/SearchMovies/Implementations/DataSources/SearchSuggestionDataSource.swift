@@ -11,11 +11,8 @@ import UIKit
 
 class SearchSuggestionDataSource: NSObject, UITableViewDataSource {
     
-    func setSuggestions(_ suggestions: [String]) {
-        self.suggestions = suggestions
-    }
     
-    private var suggestions: [String] = []
+    var suggestions: [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return suggestions.count

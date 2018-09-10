@@ -7,15 +7,35 @@
 //
 
 import Foundation
+import Api
 
 class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
-
+    
     var router: SearchMoviesRouter?
     var interactor: SearchMoviesInteractor?
     weak var view: SearchMoviesViewController?
     
-    func onTapSearchButton() {
-        //TODO: - Search implementation
+    func onTapSearchButton(keyword: String) {
+        interactor?.reFetch(keyword: keyword)
+    }
+
+    func onReachBottomScroll() {
+        interactor?.fetchMoreIfNeeded()
+    }
+    
+    func onPullToRefresh() {
+        interactor?.reFetch(keyword: nil)
+    }
+    
+    func handleSuccessRequest(response: MovieResponse) {
+        if response.page > 1 {
+            view?.appendMovies(response.results)
+        } else {
+            view?.setMovies(response.results,
+                            totalPages: response.total_pages,
+                            totalResults: response.total_results)
+        }
+        view?.reloadData()
     }
 
 }

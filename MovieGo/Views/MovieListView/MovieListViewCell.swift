@@ -10,6 +10,6 @@ import UIKit
 
 class MovieListViewCell: UITableViewCell {
 
-    
+    @IBOutlet weak var movieListView: MovieListView!
     
 }

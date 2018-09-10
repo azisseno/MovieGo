@@ -12,11 +12,14 @@ import UIKit
 class SearchMoviesDefaultBuilder {
 
     func main() -> UIViewController {
-        let view = SearchMoviesDefaultViewController()
+        let storyboard: UIStoryboard = UIStoryboard(name: "Movies", bundle: nil)
+        let view = storyboard.instantiateInitialViewController() as! SearchMoviesDefaultViewController
         let interactor = SearchMoviesDefaultInteractor()
         let presenter = SearchMoviesDefaultPresenter()
         let router = SearchMoviesDefaultRouter()
-        let controller = UINavigationController(rootViewController: view)
+        let controller = BaseNavigationViewController(rootViewController: view)
+
+        interactor.presenter = presenter
 
         view.presenter = presenter
 

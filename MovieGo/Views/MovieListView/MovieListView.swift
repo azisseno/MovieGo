@@ -8,12 +8,11 @@
 
 import UIKit
 
-@IBDesignable
 class MovieListView: UIView, ViewFromNib {
     
     var view: UIView?
     var nibName: String {
-        return "InfoTextView"
+        return "MovieListView"
     }
     
     @IBOutlet weak var posterImage: UIImageView!
@@ -31,5 +30,4 @@ class MovieListView: UIView, ViewFromNib {
         setupXIB()
         view?.prepareForInterfaceBuilder()
     }
-
 }

@@ -9,19 +9,56 @@
 import Foundation
 import UIKit
 import Api
+import Alamofire
 
 class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
 
+    private var response: MovieResponse!
+    private var currentKeyword: String = ""
+    var request: DataRequest?
+    
     weak var presenter: SearchMoviesPresenter?
+    private var requestState: RequestState = .ready
+    
+    func reFetch(keyword: String? = nil) {
+        if let keyword = keyword {
+            currentKeyword = keyword
+        }
+        fetchMovie(
+            page: 1,
+            keyword: currentKeyword,
+            onFailure: { error in
+                
+            }
+        )
+    }
+    
+    func fetchMoreIfNeeded() {
+        guard response.page <= response.total_pages else { return }
+        fetchMovie(
+            page: response.page + 1,
+            keyword: currentKeyword,
+            onFailure: { error in
+                
+            }
+        )
+    }
 
-    func fetchMovie(page: Int, keyword: String) {
-        MovieServices.getSearchMovie(
+    func fetchMovie(page: Int, keyword: String,
+                    onFailure: @escaping ((ErrorResponse) -> ())) {
+        guard requestState != .loading else { return }
+        requestState = .loading
+        request = MovieServices.getSearchMovie(
             query: keyword,
             page: page,
-            onSuccess: { movieResponse in
-                
-            }, onFailure: { error in
-            
+            onSuccess: { [weak self] response in
+                self?.response = response
+                self?.requestState = .success
+                self?.presenter?.handleSuccessRequest(response: response)
+            },
+            onFailure: { [weak self] error in
+                self?.requestState = .error
+                onFailure(error)
             }
         ).call()
     }
