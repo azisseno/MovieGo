@@ -32,6 +32,7 @@ class StorageTestHelper {
         return coordinator!
     }()
     
+    @available(iOS 10.0, *)
     private lazy var mockPersistantContainer: NSPersistentContainer = {
         
         let container = NSPersistentContainer(name: "MovieStorage", managedObjectModel: self.managedObjectModel)
@@ -54,7 +55,10 @@ class StorageTestHelper {
     }()
 
     func setupMockCoreData() {
-        CoreDataStorage.setPersistentContainer(mockPersistantContainer)
-        CoreDataStorage.setPersistentStoreCoordinator(mockPersistentStoreCoordinator)
-    }    
+        if #available(iOS 10.0, *) {
+            CoreDataStorage.setPersistentContainer(mockPersistantContainer)
+        } else {
+            CoreDataStorage.setPersistentStoreCoordinator(mockPersistentStoreCoordinator)
+        }
+    }
 }
