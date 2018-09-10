@@ -143,6 +143,7 @@
 				10D4A547214551CF0012C91F /* Core */,
 				10D4A55D214569F20012C91F /* Modules */,
 				10D4A59D2146119C0012C91F /* Resources */,
+				10D4A5CD21461BC70012C91F /* Views */,
 			);
 			path = MovieGo;
 			sourceTree = "<group>";
@@ -248,6 +249,21 @@
 				10D4A5C321461B180012C91F /* SearchMoviesInteractor.swift */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		10D4A5CD21461BC70012C91F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10D4A5CE21461BD50012C91F /* MovieListView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		10D4A5CE21461BD50012C91F /* MovieListView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieListView;
 			sourceTree = "<group>";
 		};
 		25D0CB37EF6843E8A82979DE /* Pods */ = {
