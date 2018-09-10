@@ -13,4 +13,6 @@ protocol SearchMoviesPresenter: class {
     var router: SearchMoviesRouter? { get set }
     var interactor: SearchMoviesInteractor? { get set }
     var view: SearchMoviesViewController? { get set }
+    
+    func onTapSearchButton()
 }

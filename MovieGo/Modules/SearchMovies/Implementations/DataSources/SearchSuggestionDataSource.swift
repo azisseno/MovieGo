@@ -7,3 +7,28 @@
 //
 
 import Foundation
+import UIKit
+
+class SearchSuggestionDataSource: NSObject, UITableViewDataSource {
+    
+    func setSuggestions(_ suggestions: [String]) {
+        self.suggestions = suggestions
+    }
+    
+    private var suggestions: [String] = []
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return suggestions.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = "cek"
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+}

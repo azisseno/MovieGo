@@ -8,6 +8,7 @@
 
 import UIKit
 
+/// Xib setup for UIView boilerplate
 protocol ViewFromNib: class {
     var view: UIView? { get set }
     var nibName: String { get }
@@ -15,6 +16,7 @@ protocol ViewFromNib: class {
 
 extension ViewFromNib where Self: UIView {
     
+    /// Embed Nib view into the class
     func setupXIB() {
         guard let view = loadViewFromNib() else { return }
         view.frame = bounds
@@ -23,6 +25,9 @@ extension ViewFromNib where Self: UIView {
         self.view = view
     }
     
+    /// Load UIView from nib
+    ///
+    /// - Returns: Nib View
     private func loadViewFromNib() -> UIView? {
         let bundle = Bundle(for: type(of: self))
         let nib = UINib(nibName: nibName, bundle: bundle)
@@ -31,6 +36,7 @@ extension ViewFromNib where Self: UIView {
             options: nil).first as? UIView
     }
     
+    /// Nib name must be same with UIView class
     var nibName: String {
         return String(describing: self)
     }

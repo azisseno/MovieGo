@@ -10,13 +10,20 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
     
+    
+    /// Return nearest BaseNavigationViewController
     final var navBar: BaseNavigationViewController? {
         return navigationController as? BaseNavigationViewController
     }
 
     lazy var searchController: UISearchController = UISearchController(searchResultsController: nil)
     
-    func setSearchBarOnNavigation(delegate: UITableViewController,
+    /// Set SearchBar on NavigationBar
+    ///
+    /// - Parameters:
+    ///   - delegate: You may put `UISearchControllerDelegate`, `UISearchBarDelegate` and/or `UISearchResultsUpdating here and will be automatically assigned`
+    ///   - placeholder: Search Bar text placeholder
+    func setSearchBarOnNavigation(delegate: Any,
                       placeholder: String = "Search") {
         if let delegate = delegate as? UISearchBarDelegate {
             searchController.searchBar.delegate = delegate

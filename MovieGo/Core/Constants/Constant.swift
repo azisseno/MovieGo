@@ -9,6 +9,8 @@
 import Foundation
 
 struct Constant {
+    
+    //Mark: - URL base path
     static let apiBasePath: String = "http://api.themoviedb.org/3"
     static let imageBasePath: String = "​http://image.tmdb.org/t/p"
 }
