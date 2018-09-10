@@ -52,7 +52,7 @@ do {
 let moduleUrl = workUrl.appendingPathComponent(module)
 let interfacesUrl = moduleUrl.appendingPathComponent("Interfaces")
 let implmentationsUrl = moduleUrl.appendingPathComponent("Implementations")
-let defaultUrl = implmentationsUrl.appendingPathComponent("Default")
+let defaultUrl = implmentationsUrl
 
 let interfaceRouterUrl = interfacesUrl.appendingPathComponent(module+"Router").appendingPathExtension("swift")
 let interfacePresenterUrl = interfacesUrl.appendingPathComponent(module+"Presenter").appendingPathExtension("swift")

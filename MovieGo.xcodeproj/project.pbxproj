@@ -266,21 +266,13 @@
 		10D4A5B821461B180012C91F /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
-				10D4A5B921461B180012C91F /* Default */,
-			);
-			path = Implementations;
-			sourceTree = "<group>";
-		};
-		10D4A5B921461B180012C91F /* Default */ = {
-			isa = PBXGroup;
-			children = (
 				10D4A5BA21461B180012C91F /* SearchMoviesDefaultPresenter.swift */,
 				10D4A5BB21461B180012C91F /* SearchMoviesDefaultRouter.swift */,
 				10D4A5BC21461B180012C91F /* SearchMoviesDefaultViewController.swift */,
 				10D4A5BD21461B180012C91F /* SearchMoviesDefaultInteractor.swift */,
 				10D4A5BE21461B180012C91F /* SearchMoviesDefaultBuilder.swift */,
 			);
-			path = Default;
+			path = Implementations;
 			sourceTree = "<group>";
 		};
 		10D4A5BF21461B180012C91F /* Interfaces */ = {
