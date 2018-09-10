@@ -13,8 +13,7 @@ protocol SearchMoviesViewController: class {
 
     var presenter: SearchMoviesPresenter? { get set }
     
-    func setMovies(_ movies: [Movie], totalPages: Int, totalResults: Int)
+    func showNewListOfMovies(_ movies: [Movie], totalPages: Int, totalResults: Int)
     func appendMovies(_ movies: [Movie])
-    func reloadData()
-    func errorRequestHandler(_ message: String)
+    func showErrorMessage(_ message: String)
 }

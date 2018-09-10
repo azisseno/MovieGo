@@ -44,18 +44,20 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     }
     
     //MARK: - View handlers
-    func setMovies(_ movies: [Movie], totalPages: Int, totalResults: Int) {
+    func showNewListOfMovies(_ movies: [Movie], totalPages: Int, totalResults: Int) {
         dataSource.movies = []
         tableView.reloadData()
         dataSource.movies = movies
         self.totalPages = totalPages
         self.totalResults = totalResults
         currentPages = 1
+        reloadData()
     }
     
     func appendMovies(_ movies: [Movie]) {
         dataSource.movies += movies
         currentPages += 1
+        reloadData()
     }
     
     @objc func handleRefresh() {
@@ -67,7 +69,7 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
         tableView.reloadData()
     }
     
-    func errorRequestHandler(_ errorMessage: String) {
+    func showErrorMessage(_ errorMessage: String) {
         showSnackAlert(message: errorMessage)
         refreshControl?.endRefreshing()
     }

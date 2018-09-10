@@ -31,14 +31,13 @@ class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
         if response.page > 1 {
             view?.appendMovies(response.results)
         } else {
-            view?.setMovies(response.results,
-                            totalPages: response.total_pages,
-                            totalResults: response.total_results)
+            view?.showNewListOfMovies(response.results,
+                                      totalPages: response.total_pages,
+                                      totalResults: response.total_results)
         }
-        view?.reloadData()
     }
 
     func handleErrorRequest(response: ErrorResponse) {
-        view?.errorRequestHandler(response.message)
+        view?.showErrorMessage(response.message)
     }
 }
