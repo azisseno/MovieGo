@@ -1,5 +1,5 @@
 //
-//  CoreDataManager+SavedKeyword.swift
+//  SavedKeywordManager.swift
 //  Storage
 //
 //  Created by Azis Senoaji Prasetyotomo on 09/09/18.
@@ -9,7 +9,9 @@
 import Foundation
 import CoreData
 
-public class SavedKeywordManager: CoreDataManager<SavedKeyword> {
+public class SavedKeywordManager: CoreDataManager {
+    
+    public typealias T = SavedKeyword
     
     /// Save keyword to core data
     ///

@@ -1,5 +1,5 @@
 //
-//  InfoTextView.swift
+//  EmptyStateView.swift
 //  MovieGo
 //
 //  Created by Azis Senoaji Prasetyotomo on 10/09/18.
@@ -8,24 +8,20 @@
 
 import UIKit
 
-class InfoTextView: UIView, ViewFromNib {
+class EmptyStateView: UIView, ViewFromNib {
     
     var view: UIView?
     var nibName: String {
-        return "InfoTextView"
+        return "EmptyStateView"
     }
-    
     @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var icon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupXIB()
-        setupIcon()
     }
-        
-    func setupIcon() {
-        icon.image = #imageLiteral(resourceName: "info_ico")
-        icon.contentMode = .scaleAspectFit
+    
+    func setLabel(text: String) {
+        label.text = text
     }
 }

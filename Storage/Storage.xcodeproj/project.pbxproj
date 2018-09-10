@@ -12,7 +12,7 @@
 		105DA5822143F1DA00056EB5 /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
 		105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5832143F1E300056EB5 /* CoreDataStorage.swift */; };
 		10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5872145791B0012C91F /* CoreDataManager.swift */; };
-		10D4A58D21457D760012C91F /* CoreDataManager+SavedKeyword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58C21457D760012C91F /* CoreDataManager+SavedKeyword.swift */; };
+		10D4A58D21457D760012C91F /* SavedKeywordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58C21457D760012C91F /* SavedKeywordManager.swift */; };
 		10D4A58F21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */; };
 		10D4A59121458D500012C91F /* StorageTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A59021458D500012C91F /* StorageTestHelper.swift */; };
 		10D4A593214595770012C91F /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
@@ -38,7 +38,7 @@
 		105DA5812143F1DA00056EB5 /* MovieStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieStorage.xcdatamodel; sourceTree = "<group>"; };
 		105DA5832143F1E300056EB5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
 		10D4A5872145791B0012C91F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		10D4A58C21457D760012C91F /* CoreDataManager+SavedKeyword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataManager+SavedKeyword.swift"; sourceTree = "<group>"; };
+		10D4A58C21457D760012C91F /* SavedKeywordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedKeywordManager.swift; sourceTree = "<group>"; };
 		10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerSavedKeywordTests.swift; sourceTree = "<group>"; };
 		10D4A59021458D500012C91F /* StorageTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageTestHelper.swift; sourceTree = "<group>"; };
 		3E9E984C0385C26F895C567D /* Pods-Storage.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Storage.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-Storage/Pods-Storage.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +120,7 @@
 		10D4A58B21457D670012C91F /* EntityManagers */ = {
 			isa = PBXGroup;
 			children = (
-				10D4A58C21457D760012C91F /* CoreDataManager+SavedKeyword.swift */,
+				10D4A58C21457D760012C91F /* SavedKeywordManager.swift */,
 			);
 			path = EntityManagers;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			files = (
 				105DA5822143F1DA00056EB5 /* MovieStorage.xcdatamodeld in Sources */,
 				105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */,
-				10D4A58D21457D760012C91F /* CoreDataManager+SavedKeyword.swift in Sources */,
+				10D4A58D21457D760012C91F /* SavedKeywordManager.swift in Sources */,
 				10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

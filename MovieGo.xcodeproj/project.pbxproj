@@ -21,6 +21,8 @@
 		1066C4E82146B560001250A5 /* SnackBarManagers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4E72146B560001250A5 /* SnackBarManagers.swift */; };
 		1066C4EA2146B5C3001250A5 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4E92146B5C3001250A5 /* Connectivity.swift */; };
 		1066C4EC2146B61D001250A5 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4EB2146B61D001250A5 /* UIColor.swift */; };
+		1066C4F02146CC31001250A5 /* EmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1066C4EF2146CC31001250A5 /* EmptyStateView.xib */; };
+		1066C4F22146CEAB001250A5 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1066C4F12146CEAB001250A5 /* EmptyStateView.swift */; };
 		106D86212143AAB90080EFAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86202143AAB90080EFAC /* AppDelegate.swift */; };
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
@@ -89,6 +91,8 @@
 		1066C4E72146B560001250A5 /* SnackBarManagers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackBarManagers.swift; sourceTree = "<group>"; };
 		1066C4E92146B5C3001250A5 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		1066C4EB2146B61D001250A5 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		1066C4EF2146CC31001250A5 /* EmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyStateView.xib; sourceTree = "<group>"; };
+		1066C4F12146CEAB001250A5 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		106D861D2143AAB80080EFAC /* MovieGo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieGo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D86202143AAB90080EFAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		106D862A2143AAB90080EFAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -162,6 +166,15 @@
 				10000ECE2146718600111246 /* Movies.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1066C4EE2146CC1A001250A5 /* EmptyStateView */ = {
+			isa = PBXGroup;
+			children = (
+				1066C4EF2146CC31001250A5 /* EmptyStateView.xib */,
+				1066C4F12146CEAB001250A5 /* EmptyStateView.swift */,
+			);
+			path = EmptyStateView;
 			sourceTree = "<group>";
 		};
 		106D86142143AAB80080EFAC = {
@@ -289,6 +302,7 @@
 		10D4A5CD21461BC70012C91F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1066C4EE2146CC1A001250A5 /* EmptyStateView */,
 				10D4A5D2214621800012C91F /* InfoTextView */,
 				10D4A5CE21461BD50012C91F /* MovieListView */,
 			);
@@ -452,6 +466,7 @@
 				10000ECF2146718600111246 /* Movies.storyboard in Resources */,
 				10D4A5E5214644940012C91F /* MovieListView.xib in Resources */,
 				10000ED4214676CE00111246 /* Main.storyboard in Resources */,
+				1066C4F02146CC31001250A5 /* EmptyStateView.xib in Resources */,
 				10D4A5D4214621910012C91F /* InfoTextView.xib in Resources */,
 				106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */,
 			);
@@ -528,6 +543,7 @@
 				1066C4EC2146B61D001250A5 /* UIColor.swift in Sources */,
 				10D4A5C521461B180012C91F /* SearchMoviesDefaultRouter.swift in Sources */,
 				1066C4EA2146B5C3001250A5 /* Connectivity.swift in Sources */,
+				1066C4F22146CEAB001250A5 /* EmptyStateView.swift in Sources */,
 				10D4A5DB214628560012C91F /* MovieListDataSource.swift in Sources */,
 				10D4A5C821461B180012C91F /* SearchMoviesDefaultBuilder.swift in Sources */,
 				10D4A5CB21461B180012C91F /* SearchMoviesRouter.swift in Sources */,

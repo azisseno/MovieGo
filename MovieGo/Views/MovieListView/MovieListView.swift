@@ -26,13 +26,6 @@ class MovieListView: UIView, ViewFromNib {
         setupSubViews()
     }
     
-    override func prepareForInterfaceBuilder() {
-        super.prepareForInterfaceBuilder()
-        setupXIB()
-        setupSubViews()
-        view?.prepareForInterfaceBuilder()
-    }
-    
     func set(posterPath: String?,
              title: String,
              releaseDateText: String,
