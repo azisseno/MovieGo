@@ -15,13 +15,15 @@ class EmptyStateView: UIView, ViewFromNib {
         return "EmptyStateView"
     }
     @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var emoticon: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupXIB()
     }
     
-    func setLabel(text: String) {
+    func setLabel(text: String, emoticon: String) {
         label.text = text
+        self.emoticon.text = emoticon
     }
 }

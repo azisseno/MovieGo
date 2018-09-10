@@ -11,7 +11,14 @@ import UIKit
 import Api
 
 class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesViewController {
-    
+        
+    //MARK: - Instances
+    lazy var emptyState: EmptyStateView = {
+        let view: EmptyStateView = EmptyStateView.fromNib()
+        view.setLabel(text: SearchMoviesConstant.initialText,
+                            emoticon: "🎬")
+        return view
+    }()
     var presenter: SearchMoviesPresenter?
     let dataSource = MovieListDataSource()
     private var totalPages: Int = 0
@@ -45,12 +52,14 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     //MARK: - View handlers
     func showNewListOfMovies(_ movies: [Movie], totalPages: Int, totalResults: Int) {
-        dataSource.movies = []
-        tableView.reloadData()
-        dataSource.movies = movies
+        if totalResults <= 0 {
+            emptyState.setLabel(text: SearchMoviesConstant.notFoundText,
+                                emoticon: "😔")
+        }
         self.totalPages = totalPages
         self.totalResults = totalResults
         currentPages = 1
+        dataSource.movies = movies
         reloadData()
     }
     
@@ -83,6 +92,8 @@ extension SearchMoviesDefaultViewController: UISearchBarDelegate {
         } else {
             searchBar.resignFirstResponder()
         }
+        dataSource.movies = []
+        tableView.reloadData()
         refreshControl?.beginRefreshing()
         presenter?.onTapSearchButton(keyword: searchBar.text ?? "")
     }
@@ -93,6 +104,14 @@ extension SearchMoviesDefaultViewController {
     //MARK: - UITableView Delegate
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return totalResults > 0 ? 0 : tableView.frame.height * 0.6
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return totalResults > 0 ? nil : emptyState
     }
     
     //MARK: - UIScrollView Delegate

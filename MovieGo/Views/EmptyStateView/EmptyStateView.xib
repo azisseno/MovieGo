@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyStateView" customModule="MovieGo" customModuleProvider="target">
             <connections>
+                <outlet property="emoticon" destination="m2w-1X-rW7" id="fsn-TG-t4I"/>
                 <outlet property="label" destination="qVE-m7-17H" id="2ql-xs-cI4"/>
             </connections>
         </placeholder>
