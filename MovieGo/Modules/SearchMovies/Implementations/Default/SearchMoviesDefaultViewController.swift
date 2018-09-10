@@ -45,6 +45,8 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     //MARK: - View handlers
     func setMovies(_ movies: [Movie], totalPages: Int, totalResults: Int) {
+        dataSource.movies = []
+        tableView.reloadData()
         dataSource.movies = movies
         self.totalPages = totalPages
         self.totalResults = totalResults
