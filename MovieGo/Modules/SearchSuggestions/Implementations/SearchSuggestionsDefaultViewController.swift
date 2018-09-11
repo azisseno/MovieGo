@@ -12,6 +12,7 @@ import UIKit
 class SearchSuggestionsDefaultViewController: BaseTableViewController, SearchSuggestionsViewController {
 
     //MARK: - Instances
+    fileprivate let searchResultKey = "searchSuggestionsResultsHidden"
     lazy var header: InfoTextView = InfoTextView.fromNib()
     var presenter: SearchSuggestionsPresenter?
     let dataSource = SuggestionsDataSource()
@@ -33,6 +34,17 @@ class SearchSuggestionsDefaultViewController: BaseTableViewController, SearchSug
     func showSuggestions(keywords: [String]) {
         dataSource.suggestions = keywords
         tableView.reloadData()
+    }
+}
+
+extension SearchSuggestionsDefaultViewController: UISearchControllerDelegate {
+    func didPresentSearchController(_ searchController: UISearchController) {
+        searchController.searchResultsController?.view.isHidden = false
+        presenter?.onViewLoad()
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        searchController.searchResultsController?.view.isHidden = true
     }
 }
 

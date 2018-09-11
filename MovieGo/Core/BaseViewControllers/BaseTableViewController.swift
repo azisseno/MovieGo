@@ -20,9 +20,10 @@ class BaseTableViewController: UITableViewController {
         return nil
     }
 
-    private lazy var searchController: UISearchController = UISearchController(searchResultsController: searchResultsController)
+    lazy var searchController: UISearchController = UISearchController(searchResultsController: searchResultsController)
     
     /// Set SearchBar on NavigationBar
+    /// If you dont set delegate expicitly, your UISearchResultController would be automatically assigned as `UISearchControllerDelegate`, `UISearchBarDelegate` and `UISearchResultsUpdating` delegate
     ///
     /// - Parameters:
     ///   - delegate: You may put `UISearchControllerDelegate`, `UISearchBarDelegate` and/or `UISearchResultsUpdating here and will be automatically assigned`
@@ -33,9 +34,6 @@ class BaseTableViewController: UITableViewController {
                                   placeholder: String = "Search") {
         
         searchController.searchBar.placeholder = placeholder
-        setDelegate(searchBarDelegate: searchBarDelegate,
-                    searchResultsUpdating: searchResultsUpdating,
-                    searchControllerDelegate: searchControllerDelegate)
         
         if #available(iOS 11.0, *) {
             navBar?.navigationBar.prefersLargeTitles = true
@@ -52,11 +50,21 @@ class BaseTableViewController: UITableViewController {
             searchController.dimsBackgroundDuringPresentation = false
         }
         definesPresentationContext = true
+        
+        setDelegate(searchBarDelegate: searchController.searchResultsController,
+                    searchResultsUpdating: searchController.searchResultsController,
+                    searchControllerDelegate: searchController.searchResultsController)
+
+        setDelegate(searchBarDelegate: searchBarDelegate,
+                    searchResultsUpdating: searchResultsUpdating,
+                    searchControllerDelegate: searchControllerDelegate)
     }
     
     private func setDelegate(searchBarDelegate: Any?,
                              searchResultsUpdating: Any?,
                              searchControllerDelegate: Any?) {
+        
+        
         if let delegate = searchBarDelegate as? UISearchBarDelegate {
             searchController.searchBar.delegate = delegate
         }

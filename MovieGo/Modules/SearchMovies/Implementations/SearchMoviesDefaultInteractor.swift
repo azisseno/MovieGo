@@ -60,7 +60,9 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
     }
     
     func saveKeywordToCoreData() {
+        guard response.total_results > 0 else { return }
         let manager = SavedKeywordManager()
         manager.saveKeyword(currentKeyword)
+        CoreDataStorage.shared.backgroundSave()
     }
 }

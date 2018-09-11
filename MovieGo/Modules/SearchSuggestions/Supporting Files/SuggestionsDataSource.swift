@@ -13,13 +13,12 @@ class SuggestionsDataSource: NSObject, UITableViewDataSource {
     var suggestions: [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return suggestions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "suggestionCell", for: indexPath)
-        cell.textLabel?.text = "Test"
-//        cell.textLabel?.text = suggestions[indexPath.row]
+        cell.textLabel?.text = suggestions[indexPath.row]
         return cell
     }
 }

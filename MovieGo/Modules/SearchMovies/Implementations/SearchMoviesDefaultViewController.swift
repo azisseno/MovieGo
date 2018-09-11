@@ -94,6 +94,14 @@ extension SearchMoviesDefaultViewController: UISearchBarDelegate {
         refreshControl?.beginRefreshing()
         presenter?.onTapSearchButton(keyword: searchBar.text ?? "")
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchController.searchResultsController?.view.isHidden = false
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchController.searchResultsController?.view.isHidden = false
+    }
 }
 
 extension SearchMoviesDefaultViewController {
