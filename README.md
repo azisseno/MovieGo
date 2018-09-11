@@ -39,19 +39,19 @@ It'll generate a module template with the given name in the current directory.
 ## Api Target Overview
 **Purpose**
 Separating Api Target from the **monolitic app** for me is great idea. Api have versioning stuff and following it is such a hell. Sometimes **(really often in real life)**  1 application need to call different version of Endpoint, so instead of maintain the helper class, we can just create 1 target for 1 version of Api. This strategy also accomodate the adaption of changing of our api, if we need to change all or some of our endpoint, you know what should we do without messing up another stuff.
-***
+---
 **Unit Test**
 
 Api is the most important element in the app, so the unit test strategy here is doing real call once and stub the rest. Api stubbing also has a strategy, we have to make sure we mock and stub our api base on the documentation. For me? Okay I don't have the documentation so my strategy was call all posibility response from 1 endpoint you gave me and put it on my **Unit Test**.
-***
+___
 ## Storage Target Overview
 **Purpose**
 
 Okay a lot of features are comming in for iOS,  that's why we need to have our seperated storage management just in case we would change our Database system. You may say, we can still do this (change database system) on our main app but, **Can you imagine the conflicts ?** and **How many line of code would be affected by this ?**. So with separating target, we can only change our internal target code without messing up the public api.
-***
+___
 **Unit Test**
 Yes, I use **In Memory** type of core data to do unit testing because I dont want to mess up my current saved data. The purposes of unit test here are knowing CRUD function works perfectly and syncronusly.
-***
+___
 ## MovieGo Target Overview
 
 **Structures**
@@ -112,7 +112,7 @@ Most user dont like disturbing alert, so just let them know in the elegant way.
 ***
 Huft.. That'all my explanation about my assessment, It was exausting but very fun. Hope this match your expectation.
 
-Ahh yah.. about **UI Test**. Wait! It's only a week and don't we have a software engineer in test nowadays :D. Thanks! good luck for me..
+Ahh yah.. about **UI Test**. Wait! It's only a week dude!! Ahh Don't we have a software engineer in test nowadays :D. Thanks! good luck for me..
 
 
 Best,
