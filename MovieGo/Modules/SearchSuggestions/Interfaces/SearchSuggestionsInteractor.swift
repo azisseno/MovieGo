@@ -11,4 +11,5 @@ import Foundation
 protocol SearchSuggestionsInteractor {
 
     var presenter: SearchSuggestionsPresenter? { get set }
+    func fetchSavedKeywordsFromLocal()
 }

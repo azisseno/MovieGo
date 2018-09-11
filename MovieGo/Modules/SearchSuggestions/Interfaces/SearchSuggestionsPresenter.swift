@@ -7,10 +7,15 @@
 //
 
 import Foundation
+import Storage
 
 protocol SearchSuggestionsPresenter: class {
 
     var router: SearchSuggestionsRouter? { get set }
     var interactor: SearchSuggestionsInteractor? { get set }
     var view: SearchSuggestionsViewController? { get set }
+    
+    func handleSavedKeywords(keywords: [SavedKeyword])
+    func onViewLoad()
+
 }

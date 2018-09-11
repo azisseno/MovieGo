@@ -11,4 +11,6 @@ import Foundation
 protocol SearchSuggestionsViewController: class {
 
     var presenter: SearchSuggestionsPresenter? { get set }
+    
+    func showSuggestions(keywords: [String])
 }

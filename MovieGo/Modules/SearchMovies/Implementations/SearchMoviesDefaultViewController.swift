@@ -35,6 +35,10 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
                                  placeholder: "Find movie here ...")
     }
     
+    override var searchResultsController: UIViewController? {
+        return SearchSuggestionsDefaultBuilder().main()
+    }
+    
     //MARK: - Setup SubViews
     private func setupTableView() {
         tableView.estimatedRowHeight = 220

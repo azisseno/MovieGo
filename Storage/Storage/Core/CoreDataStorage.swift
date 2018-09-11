@@ -25,7 +25,8 @@ extension NSPersistentStoreCoordinator {
     /// Return NSPersistentStoreCoordinator object
     static func coordinator(name: String) throws -> NSPersistentStoreCoordinator? {
         
-        guard let modelURL = Bundle.main.url(forResource: name, withExtension: "momd") else {
+        let storageBundle = Bundle(identifier: "com.azisseno.careemassignment.Storage")!
+        guard let modelURL = storageBundle.url(forResource: name, withExtension: "momd") else {
             throw CoordinatorError.modelFileNotFound
         }
         
@@ -63,28 +64,7 @@ public struct CoreDataStorage {
     public static func setPersistentStoreCoordinator(_ pc: NSPersistentStoreCoordinator) {
         shared.persistentStoreCoordinator = pc
     }
-    
-    /// Set custom NSPersistentContainer
-    ///
-    /// - Parameter pc: NSPersistentContainer
-    @available(iOS 10.0, *)
-    public static func setPersistentContainer(_ pc: NSPersistentContainer) {
-        shared.persistentContainer = pc
-    }
-    
-    @available(iOS 10.0, *)
-    private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "MovieStorage")
-        container.loadPersistentStores { (storeDescription, error) in
-            print("CoreData: Inited \(storeDescription)")
-            guard error == nil else {
-                print("CoreData: Unresolved error \(String(describing: error))")
-                return
-            }
-        }
-        return container
-    }()
-    
+        
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         do {
             return try NSPersistentStoreCoordinator.coordinator(name: "MovieStorage")
@@ -115,20 +95,12 @@ public struct CoreDataStorage {
     
     /// Internal view context property for both iOS 9 and > iOS 10
     lazy var context: NSManagedObjectContext = {
-        if #available(iOS 10.0, *) {
-            return persistentContainer.viewContext
-        } else {
-            return managedObjectContext
-        }
+        return managedObjectContext
     }()
     
     /// Internal background context property for both iOS 9 and > iOS 10
     lazy var backgroundContext: NSManagedObjectContext = {
-        if #available(iOS 10.0, *) {
-            return persistentContainer.newBackgroundContext()
-        } else {
-            return backgroundManagedObjectContext
-        }
+        return backgroundManagedObjectContext
     }()
     
     /// Save changes of Core Data in background context

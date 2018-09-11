@@ -18,7 +18,6 @@ class SearchSuggestionsDefaultBuilder {
         let interactor = SearchSuggestionsDefaultInteractor()
         let presenter = SearchSuggestionsDefaultPresenter()
         let router = SearchSuggestionsDefaultRouter()
-        let controller = BaseNavigationViewController(rootViewController: view)
 
         interactor.presenter = presenter
 
@@ -31,6 +30,6 @@ class SearchSuggestionsDefaultBuilder {
         router.presenter = presenter
         router.viewController = view
 
-        return controller
+        return view
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import Api
 import Alamofire
+import Storage
 
 class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
 
@@ -48,6 +49,7 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
             onSuccess: { [weak self] response in
                 self?.response = response
                 self?.requestState = .success
+                self?.saveKeywordToCoreData()
                 self?.presenter?.handleSuccessRequest(response: response)
             },
             onFailure: { [weak self] error in
@@ -55,5 +57,10 @@ class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
                 self?.presenter?.handleErrorRequest(response: error)
             }
         ).call()
+    }
+    
+    func saveKeywordToCoreData() {
+        let manager = SavedKeywordManager()
+        manager.saveKeyword(currentKeyword)
     }
 }

@@ -28,4 +28,8 @@ class InfoTextView: UIView, ViewFromNib {
         icon.image = #imageLiteral(resourceName: "info_ico")
         icon.contentMode = .scaleAspectFit
     }
+    
+    func set(text: String) {
+        self.label.text = text
+    }
 }

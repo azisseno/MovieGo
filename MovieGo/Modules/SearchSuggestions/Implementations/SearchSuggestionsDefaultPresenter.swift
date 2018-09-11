@@ -7,10 +7,21 @@
 //
 
 import Foundation
+import Storage
 
 class SearchSuggestionsDefaultPresenter: SearchSuggestionsPresenter {
-
+    
     var router: SearchSuggestionsRouter?
     var interactor: SearchSuggestionsInteractor?
     weak var view: SearchSuggestionsViewController?
+    
+    func handleSavedKeywords(keywords: [SavedKeyword]) {
+        let keywordTexts = keywords.map { $0.keyword }
+        view?.showSuggestions(keywords: keywordTexts)
+    }
+    
+    func onViewLoad() {
+        interactor?.fetchSavedKeywordsFromLocal()
+    }
+    
 }

@@ -12,6 +12,7 @@ import UIKit
 class SearchSuggestionsDefaultViewController: BaseTableViewController, SearchSuggestionsViewController {
 
     //MARK: - Instances
+    lazy var header: InfoTextView = InfoTextView.fromNib()
     var presenter: SearchSuggestionsPresenter?
     let dataSource = SuggestionsDataSource()
     
@@ -29,4 +30,21 @@ class SearchSuggestionsDefaultViewController: BaseTableViewController, SearchSug
         tableView.reloadData()
     }
     
+    func showSuggestions(keywords: [String]) {
+        dataSource.suggestions = keywords
+        tableView.reloadData()
+    }
+}
+
+extension SearchSuggestionsDefaultViewController {
+    
+    //MARK: - UITableView Delegate
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        header.set(text: "Suggested Search")
+        return header
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 70
+    }
 }

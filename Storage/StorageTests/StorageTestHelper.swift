@@ -32,33 +32,4 @@ class StorageTestHelper {
         return coordinator!
     }()
     
-    @available(iOS 10.0, *)
-    private lazy var mockPersistantContainer: NSPersistentContainer = {
-        
-        let container = NSPersistentContainer(name: "MovieStorage", managedObjectModel: self.managedObjectModel)
-        let description = NSPersistentStoreDescription()
-        description.type = NSInMemoryStoreType
-        description.shouldAddStoreAsynchronously = false // Make it simpler in test env
-        
-        container.persistentStoreDescriptions = [description]
-        container.loadPersistentStores { (description, error) in
-            // Check if the data store is in memory
-            precondition( description.type == NSInMemoryStoreType )
-            
-            // Check if creating container wrong
-            if let error = error {
-                fatalError("Create an in-mem coordinator failed \(error)")
-            }
-        }
-        container.viewContext.automaticallyMergesChangesFromParent = true
-        return container
-    }()
-
-    func setupMockCoreData() {
-        if #available(iOS 10.0, *) {
-            CoreDataStorage.setPersistentContainer(mockPersistantContainer)
-        } else {
-            CoreDataStorage.setPersistentStoreCoordinator(mockPersistentStoreCoordinator)
-        }
-    }
 }

@@ -11,6 +11,8 @@ import CoreData
 
 public class SavedKeywordManager: CoreDataManager {
     
+    public init() { }
+    
     public typealias T = SavedKeyword
     
     /// Save keyword to core data
@@ -32,7 +34,9 @@ public class SavedKeywordManager: CoreDataManager {
     ///   - keyword: keyword filter
     ///   - backgroundFetch: which context do you want to use
     /// - Returns: Array of `SavedKeyword` entity
-    public func getData(withKeyword keyword: String? = nil, backgroundFetch: Bool = false) -> [SavedKeyword] {
+    public func getData(withKeyword keyword: String? = nil,
+                        withLimit limit: Int? = nil,
+                        backgroundFetch: Bool = false) -> [SavedKeyword] {
         let request: NSFetchRequest<SavedKeyword> = NSFetchRequest<SavedKeyword>(entityName: entityName)
         if let keyword = keyword {
             let predicate = NSPredicate(format: "%K == %@", "keyword", keyword)
@@ -40,6 +44,9 @@ public class SavedKeywordManager: CoreDataManager {
         }
         let sort = NSSortDescriptor(key: "timestamp", ascending: false)
         request.sortDescriptors = [sort]
+        if let limit = limit {
+            request.fetchLimit = limit
+        }
         let results: [SavedKeyword]?
         if backgroundFetch {
             results = try? CoreDataStorage.shared.backgroundContext.fetch(request)

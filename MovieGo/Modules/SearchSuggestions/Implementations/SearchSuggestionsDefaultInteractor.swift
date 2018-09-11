@@ -8,9 +8,16 @@
 
 import Foundation
 import UIKit
+import Storage
 
 class SearchSuggestionsDefaultInteractor: SearchSuggestionsInteractor {
 
     weak var presenter: SearchSuggestionsPresenter?
+
+    func fetchSavedKeywordsFromLocal() {
+        let manager = SavedKeywordManager()
+        let savedKeywords = manager.getData(withLimit: 10)
+        presenter?.handleSavedKeywords(keywords: savedKeywords)
+    }
 
 }

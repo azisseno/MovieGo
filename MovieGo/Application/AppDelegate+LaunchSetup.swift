@@ -8,11 +8,13 @@
 
 import UIKit
 import Api
+import Storage
 
 extension AppDelegate {
     
     func launchSetup() {
         Api.initInstance(apiBasePath: Constant.apiBasePath)
+        let _ = CoreDataStorage.shared
         setupInitialScreen()
     }
     

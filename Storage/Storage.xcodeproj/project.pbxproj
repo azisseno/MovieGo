@@ -11,11 +11,12 @@
 		105DA5772143F1BC00056EB5 /* Storage.h in Headers */ = {isa = PBXBuildFile; fileRef = 105DA5692143F1BC00056EB5 /* Storage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		105DA5822143F1DA00056EB5 /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
 		105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5832143F1E300056EB5 /* CoreDataStorage.swift */; };
+		10BB21A22147C4E7008B427D /* SavedKeyword+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB21A02147C4E7008B427D /* SavedKeyword+CoreDataClass.swift */; };
+		10BB21A32147C4E7008B427D /* SavedKeyword+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB21A12147C4E7008B427D /* SavedKeyword+CoreDataProperties.swift */; };
 		10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A5872145791B0012C91F /* CoreDataManager.swift */; };
 		10D4A58D21457D760012C91F /* SavedKeywordManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58C21457D760012C91F /* SavedKeywordManager.swift */; };
 		10D4A58F21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */; };
 		10D4A59121458D500012C91F /* StorageTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A59021458D500012C91F /* StorageTestHelper.swift */; };
-		10D4A593214595770012C91F /* MovieStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 105DA5802143F1DA00056EB5 /* MovieStorage.xcdatamodeld */; };
 		5FD8BE9679B63B50456ACC37 /* Pods_Storage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40139F7EB702961A83B40727 /* Pods_Storage.framework */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +38,8 @@
 		105DA5762143F1BC00056EB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		105DA5812143F1DA00056EB5 /* MovieStorage.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MovieStorage.xcdatamodel; sourceTree = "<group>"; };
 		105DA5832143F1E300056EB5 /* CoreDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStorage.swift; sourceTree = "<group>"; };
+		10BB21A02147C4E7008B427D /* SavedKeyword+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedKeyword+CoreDataClass.swift"; sourceTree = "<group>"; };
+		10BB21A12147C4E7008B427D /* SavedKeyword+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SavedKeyword+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		10D4A5872145791B0012C91F /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		10D4A58C21457D760012C91F /* SavedKeywordManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedKeywordManager.swift; sourceTree = "<group>"; };
 		10D4A58E21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerSavedKeywordTests.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		105DA5682143F1BC00056EB5 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				10BB219F2147C483008B427D /* Entities */,
 				10D4A58B21457D670012C91F /* EntityManagers */,
 				10D4A5742145767C0012C91F /* Core */,
 				105DA5692143F1BC00056EB5 /* Storage.h */,
@@ -106,6 +110,15 @@
 				105DA5762143F1BC00056EB5 /* Info.plist */,
 			);
 			path = StorageTests;
+			sourceTree = "<group>";
+		};
+		10BB219F2147C483008B427D /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				10BB21A02147C4E7008B427D /* SavedKeyword+CoreDataClass.swift */,
+				10BB21A12147C4E7008B427D /* SavedKeyword+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		10D4A5742145767C0012C91F /* Core */ = {
@@ -277,6 +290,8 @@
 				105DA5842143F1E300056EB5 /* CoreDataStorage.swift in Sources */,
 				10D4A58D21457D760012C91F /* SavedKeywordManager.swift in Sources */,
 				10D4A5882145791B0012C91F /* CoreDataManager.swift in Sources */,
+				10BB21A22147C4E7008B427D /* SavedKeyword+CoreDataClass.swift in Sources */,
+				10BB21A32147C4E7008B427D /* SavedKeyword+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +299,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10D4A593214595770012C91F /* MovieStorage.xcdatamodeld in Sources */,
 				10D4A58F21458B8F0012C91F /* CoreDataManagerSavedKeywordTests.swift in Sources */,
 				10D4A59121458D500012C91F /* StorageTestHelper.swift in Sources */,
 			);

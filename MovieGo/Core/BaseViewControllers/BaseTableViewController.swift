@@ -51,6 +51,7 @@ class BaseTableViewController: UITableViewController {
         } else {
             searchController.dimsBackgroundDuringPresentation = false
         }
+        definesPresentationContext = true
     }
     
     private func setDelegate(searchBarDelegate: Any?,
