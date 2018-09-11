@@ -14,8 +14,8 @@ import Storage
 
 class SearchMoviesDefaultInteractor: SearchMoviesInteractor {
 
-    private var response: MovieResponse!
-    private var currentKeyword: String = ""
+    var response: MovieResponse!
+    var currentKeyword: String = ""
     var request: DataRequest?
     
     weak var presenter: SearchMoviesPresenter?
