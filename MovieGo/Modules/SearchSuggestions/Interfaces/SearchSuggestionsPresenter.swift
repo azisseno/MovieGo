@@ -17,5 +17,6 @@ protocol SearchSuggestionsPresenter: class {
     
     func handleSavedKeywords(keywords: [SavedKeyword])
     func onViewLoad()
+    func onSelectKeyword(keyword: String)
 
 }

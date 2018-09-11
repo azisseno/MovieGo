@@ -31,12 +31,12 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setSearchBarOnNavigation(searchBarDelegate: self,
-                                 placeholder: "Find movie here ...")
-    }
-    
-    override var searchResultsController: UIViewController? {
-        return SearchSuggestionsDefaultBuilder().main()
+        setSearchBarOnNavigation(
+            searchResultsViewBuilder: { [weak self] in
+                self?.presenter?.setupSearchResultsView()
+            },
+            searchBarDelegate: self,
+            placeholder: "Find movie here ...")
     }
     
     //MARK: - Setup SubViews
@@ -58,8 +58,17 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
             emptyState.setLabel(text: SearchMoviesConstant.notFoundText,
                                 emoticon: "😔")
         }
+        if movies.count <= dataSource.movies.count {
+            dataSource.movies = []
+            tableView.reloadData()
+        }
         dataSource.movies = movies
         reloadData()
+    }
+    
+    func setKeyword(_ keyword: String) {
+        searchController.searchBar.text = keyword
+        searchController.searchResultsController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func handleRefresh() {
@@ -92,7 +101,7 @@ extension SearchMoviesDefaultViewController: UISearchBarDelegate {
                             emoticon: "🍿")
         tableView.reloadData()
         refreshControl?.beginRefreshing()
-        presenter?.onTapSearchButton(keyword: searchBar.text ?? "")
+        presenter?.handleNewKeyword(searchBar.text ?? "")
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

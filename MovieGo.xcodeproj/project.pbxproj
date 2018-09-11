@@ -39,6 +39,7 @@
 		106D862B2143AAB90080EFAC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 106D862A2143AAB90080EFAC /* Assets.xcassets */; };
 		106D862E2143AAB90080EFAC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106D862C2143AAB90080EFAC /* LaunchScreen.storyboard */; };
 		106D86392143AAB90080EFAC /* MovieGoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106D86382143AAB90080EFAC /* MovieGoTests.swift */; };
+		10BB21A52147DE6B008B427D /* SearchSuggestionsModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10BB21A42147DE6B008B427D /* SearchSuggestionsModule.swift */; };
 		10D4A549214551FA0012C91F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A548214551FA0012C91F /* Constant.swift */; };
 		10D4A59621460A4C0012C91F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A59521460A4C0012C91F /* BaseTableViewController.swift */; };
 		10D4A59821460A5E0012C91F /* BaseNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D4A59721460A5E0012C91F /* BaseNavigationViewController.swift */; };
@@ -125,6 +126,7 @@
 		106D86342143AAB90080EFAC /* MovieGoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieGoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		106D86382143AAB90080EFAC /* MovieGoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieGoTests.swift; sourceTree = "<group>"; };
 		106D863A2143AAB90080EFAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10BB21A42147DE6B008B427D /* SearchSuggestionsModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSuggestionsModule.swift; sourceTree = "<group>"; };
 		10D4A548214551FA0012C91F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		10D4A59521460A4C0012C91F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		10D4A59721460A5E0012C91F /* BaseNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		102A4E962147388600AFEB57 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				10BB21A42147DE6B008B427D /* SearchSuggestionsModule.swift */,
 				102A4E972147388600AFEB57 /* SearchSuggestionsPresenter.swift */,
 				102A4E982147388600AFEB57 /* SearchSuggestionsInteractor.swift */,
 				102A4E992147388600AFEB57 /* SearchSuggestionsRouter.swift */,
@@ -359,10 +362,10 @@
 		10D4A5BF21461B180012C91F /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				10D4A5C021461B180012C91F /* SearchMoviesViewController.swift */,
+				10D4A5C321461B180012C91F /* SearchMoviesInteractor.swift */,
 				10D4A5C121461B180012C91F /* SearchMoviesPresenter.swift */,
 				10D4A5C221461B180012C91F /* SearchMoviesRouter.swift */,
-				10D4A5C321461B180012C91F /* SearchMoviesInteractor.swift */,
+				10D4A5C021461B180012C91F /* SearchMoviesViewController.swift */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				10D4A5CC21461B180012C91F /* SearchMoviesInteractor.swift in Sources */,
 				10D4A59821460A5E0012C91F /* BaseNavigationViewController.swift in Sources */,
 				102A4EA621473F5D00AFEB57 /* SuggestionsDataSource.swift in Sources */,
+				10BB21A52147DE6B008B427D /* SearchSuggestionsModule.swift in Sources */,
 				10D4A549214551FA0012C91F /* Constant.swift in Sources */,
 				1066C4EC2146B61D001250A5 /* UIColor.swift in Sources */,
 				102A4E9F2147388600AFEB57 /* SearchSuggestionsDefaultRouter.swift in Sources */,

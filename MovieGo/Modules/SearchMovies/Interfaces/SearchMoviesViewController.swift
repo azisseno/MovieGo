@@ -15,4 +15,6 @@ protocol SearchMoviesViewController: class {
     
     func showMovies(_ movies: [Movie])
     func showErrorMessage(_ message: String)
+    func setKeyword(_ keyword: String)
+    
 }

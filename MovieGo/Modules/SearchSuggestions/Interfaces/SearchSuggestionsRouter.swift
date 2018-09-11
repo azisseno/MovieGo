@@ -11,4 +11,5 @@ import Foundation
 protocol SearchSuggestionsRouter {
 
     var presenter: SearchSuggestionsPresenter? { get set }
+    func closeSearchSuggestions(keyword: String)
 }

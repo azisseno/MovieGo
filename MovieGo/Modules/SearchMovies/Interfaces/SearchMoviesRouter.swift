@@ -11,4 +11,5 @@ import Foundation
 protocol SearchMoviesRouter {
 
     var presenter: SearchMoviesPresenter? { get set }
+    func routeToSearchResults()
 }

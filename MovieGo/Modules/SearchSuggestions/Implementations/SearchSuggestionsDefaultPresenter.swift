@@ -24,4 +24,7 @@ class SearchSuggestionsDefaultPresenter: SearchSuggestionsPresenter {
         interactor?.fetchSavedKeywordsFromLocal()
     }
     
+    func onSelectKeyword(keyword: String) {
+        router?.closeSearchSuggestions(keyword: keyword)
+    }
 }

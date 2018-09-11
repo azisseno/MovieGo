@@ -59,4 +59,8 @@ extension SearchSuggestionsDefaultViewController {
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 70
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.onSelectKeyword(keyword: dataSource.suggestions[indexPath.row])
+    }
 }

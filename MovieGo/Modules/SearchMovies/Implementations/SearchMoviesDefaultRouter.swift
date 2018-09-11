@@ -12,6 +12,16 @@ import UIKit
 class SearchMoviesDefaultRouter: SearchMoviesRouter {
 
     weak var presenter: SearchMoviesPresenter?
-    weak var viewController: UIViewController?
+    weak var viewController: SearchMoviesDefaultViewController?
+    func routeToSearchResults() {
+        let searchResultsController = SearchSuggestionsDefaultBuilder().main(delegate: self)
+        viewController?.searchResultsController = searchResultsController
+    }
+    
+}
 
+extension SearchMoviesDefaultRouter: SearchSuggestionsDelegate {
+    func onSelectKeyword(_ keyword: String) {
+        presenter?.handleNewKeyword(keyword)
+    }
 }

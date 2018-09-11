@@ -16,9 +16,7 @@ class BaseTableViewController: UITableViewController {
     }
     
     /// Used as searchResultsController of SearchController
-    var searchResultsController: UIViewController? {
-        return nil
-    }
+    var searchResultsController: UIViewController? = nil
 
     lazy var searchController: UISearchController = UISearchController(searchResultsController: searchResultsController)
     
@@ -26,24 +24,32 @@ class BaseTableViewController: UITableViewController {
     /// If you dont set delegate expicitly, your UISearchResultController would be automatically assigned as `UISearchControllerDelegate`, `UISearchBarDelegate` and `UISearchResultsUpdating` delegate
     ///
     /// - Parameters:
+    ///   - builder: Set your SearchResultController via router
     ///   - delegate: You may put `UISearchControllerDelegate`, `UISearchBarDelegate` and/or `UISearchResultsUpdating here and will be automatically assigned`
     ///   - placeholder: Search Bar text placeholder
-    func setSearchBarOnNavigation(searchBarDelegate: Any? = nil,
+    func setSearchBarOnNavigation(searchResultsViewBuilder: (() -> ())? = nil,
+                                  searchBarDelegate: Any? = nil,
                                   searchResultsUpdating: Any? = nil,
                                   searchControllerDelegate: Any? = nil,
                                   placeholder: String = "Search") {
         
+        searchResultsViewBuilder?()
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = searchController
+        } else {
+            navigationItem.titleView = searchController.searchBar
+        }
         searchController.searchBar.placeholder = placeholder
         
         if #available(iOS 11.0, *) {
             navBar?.navigationBar.prefersLargeTitles = true
-            navigationItem.searchController = searchController
             navigationItem.hidesSearchBarWhenScrolling = false
         } else {
             searchController.hidesNavigationBarDuringPresentation = false
             navigationItem.titleView = searchController.searchBar
         }
-        
+                
         if #available(iOS 9.1, *) {
             searchController.obscuresBackgroundDuringPresentation = false
         } else {

@@ -18,8 +18,9 @@ class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
     var interactor: SearchMoviesInteractor?
     weak var view: SearchMoviesViewController?
     
-    func onTapSearchButton(keyword: String) {
+    func handleNewKeyword(_ keyword: String) {
         interactor?.reFetch(keyword: keyword)
+        view?.setKeyword(keyword)
     }
 
     func onReachBottomScroll() {
@@ -39,6 +40,10 @@ class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
         }
         currentResponse = response
         view?.showMovies(moviesFound)
+    }
+    
+    func setupSearchResultsView() {
+        router?.routeToSearchResults()
     }
 
     func handleErrorRequest(response: ErrorResponse) {

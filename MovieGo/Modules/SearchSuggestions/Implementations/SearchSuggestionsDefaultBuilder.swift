@@ -11,13 +11,13 @@ import UIKit
 
 class SearchSuggestionsDefaultBuilder {
 
-    func main() -> UIViewController {
+    func main(delegate: SearchSuggestionsDelegate) -> UIViewController {
 
         let storyboard: UIStoryboard = UIStoryboard(name: "SearchSuggestions", bundle: nil)
         let view = storyboard.instantiateInitialViewController() as! SearchSuggestionsDefaultViewController
         let interactor = SearchSuggestionsDefaultInteractor()
         let presenter = SearchSuggestionsDefaultPresenter()
-        let router = SearchSuggestionsDefaultRouter()
+        let router = SearchSuggestionsDefaultRouter(delegate: delegate)
 
         interactor.presenter = presenter
 
