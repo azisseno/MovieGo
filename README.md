@@ -103,21 +103,26 @@ It is fun, I use purely iOS elements to build this app including the welcome par
 
 ![Searching](Resources/Searching.png)
 
+
 Okay, wait! Don't let our user wait with no information. So let them know what they waiting for.
 
 **3. Movie List Screen**
 
 ![Movie](Resources/List.png)
+
 Voila! the movies you are looking for are on the list
 
 **4. Error Screen**
 
 ![not found](Resources/NotFound.png)
+
+
 "What happen!!! My app is showing nothing!! this is s*cks!!!" Don't let our user swearing like that! So provide the error information to them! *Ups.. I mean "to them."
 
 **5. Toast Warning**
 
 ![Toast](Resources/Toast.png)
+
 
 Most user dont like disturbing alert, so just let them know in the elegant way.
 ***
