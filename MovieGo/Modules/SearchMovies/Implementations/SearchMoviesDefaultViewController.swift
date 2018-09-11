@@ -91,11 +91,6 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
 extension SearchMoviesDefaultViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController?.dismiss(animated: true, completion: nil)
-        } else {
-            searchBar.resignFirstResponder()
-        }
         dataSource.movies = []
         emptyState.setLabel(text: SearchMoviesConstant.loadingText,
                             emoticon: "🍿")
