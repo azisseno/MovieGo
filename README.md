@@ -1,5 +1,6 @@
 
 
+
 # MovieGo
 
 MovieGo is the codename of this project :D
@@ -35,7 +36,26 @@ Here is **ModuleGenerator.swift** on the project. Just fire it up with this comm
 ```
 It'll generate a module template with the given name in the current directory.
 
+## Api Target Overview
+**Purpose**
+Separating Api Target from the **monolitic app** for me is great idea. Api have versioning stuff and following it is such a hell. Sometimes **(really often in real life)**  1 application need to call different version of Endpoint, so instead of maintain the helper class, we can just create 1 target for 1 version of Api. This strategy also accomodate the adaption of changing of our api, if we need to change all or some of our endpoint, you know what should we do without messing up another stuff.
+***
+**Unit Test**
+
+Api is the most important element in the app, so the unit test strategy here is doing real call once and stub the rest. Api stubbing also has a strategy, we have to make sure we mock and stub our api base on the documentation. For me? Okay I don't have the documentation so my strategy was call all posibility response from 1 endpoint you gave me and put it on my **Unit Test**.
+***
+## Storage Target Overview
+**Purpose**
+
+Okay a lot of features are comming in for iOS,  that's why we need to have our seperated storage management just in case we would change our Database system. You may say, we can still do this (change database system) on our main app but, **Can you imagine the conflicts ?** and **How many line of code would be affected by this ?**. So with separating target, we can only change our internal target code without messing up the public api.
+***
+**Unit Test**
+Yes, I use **In Memory** type of core data to do unit testing because I dont want to mess up my current saved data. The purposes of unit test here are knowing CRUD function works perfectly and syncronusly.
+***
 ## MovieGo Target Overview
+
+**Structures**
+
 Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieGo into 4 main folders.
 ![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/MovieGoFoldering.png)
  1. **Application** - All about application level management (AppDelegate). Why ? it's only 1 class! Okay, let's take a look to all methods inside AppDelegate, this is super complex.. You may add remote notification handler, setup key, user activity handler, and a lot more complexity in the real world. So yaps. preparing for the complexity from a very beginning is not a crime :)
@@ -43,7 +63,46 @@ Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieG
  3. **Modules** - The modules in the target (the apps itself)
  4. **Resources** - All about target resources without 3 classifications above :D
  5. **Views** - The more engineers and designers we have, the more unconsistent design we would have <span style="color:red">(IF WE DON'T HAVE GOOD PRODUCT DESIGN PRINCIPLE)</span>. Yaps in this case, I adopt one of principle from [atomic design](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjVuNqfwK_dAhVBQH0KHcF2A4MQFjABegQIBxAB&url=http://atomicdesign.bradfrost.com/&usg=AOvVaw32gtwaq63j-VXtSOmbbclN) by brad forst.  `Every single view should be reusable`.  So that, I group all views in the one place
+---
+**Highlighted Code Snippet**
 
 Why I made `BaseTableViewController` ? Yaps, it's a part of my sense of long term vision. Have you ever think that someday business requirement changes our app radically? So .... instead of doing massive refactoring with copy paste stuff, why don't we prepare a base controller to simplify our job? Of course! since it's only for an assignment, I only create 1 base controllers. But in the real life, we should *"Base-rized"* all of controllers
 
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/setSearch.png)
+Why use a builder callback for a `SearchResultsViewController` while we may use direct assign to our `UISearchController` ? In SOLID Principle, we have to separate responsibility of each class. There is `Router` that responsible to routing stuff.
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/implementationSetSearch.png)
 
+Find out `UIColor.swift`  and `UIFont.swift` files and you may be amazed why do I made this overkill stuff just for 1 - 2 kinds of them. The answer is as easy as the previous one, it would be very easy to refactor someday.
+
+Separating `DataSource` file ? Okay we all know that `UITableView DataSource` is data that related to View and we may put it on the view. But.... in Single Responsible principle (**S**OLID), we every class has single type of responsibility.. That's why I separate `DataSource` in a class.
+***
+
+**Unit Test**
+Implementing SOLID principle with VIPER, make us easier to increase our unit testing coverage. Okay for the first step, if we are run out of time, just make sure we are testing our `Interactor` because it responsible to "business logic".  We can also mock each of our components to test the real one. For example`MockInteractor` , `MockViewController` to test `Presenter`. For me? Sure! I do run out of time, so I just test the `Interactor` component of the module :D.
+***
+
+## User Experience Overview
+Finally, I reach this part :D. In general, I use iOS standard user interface to solve this assessment. But my background is Core Design Squad, so the UI should work for you as well :D. 
+1. Initial Screen
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/EmptyHome.png)
+It is fun, I use purely iOS elements to build this app including the welcome part :D
+
+2. Searching Screen
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/Searching.png)
+Okay, wait! Don't let our user wait with no information. So let them know what they waiting for.
+
+3. Movie List Screen
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/List.png)
+Voila! the movies you are looking for are on the list
+
+4. Error Screen
+![
+](https://github.com/azisseno/MovieGo/blob/master/Resources/NotFound.png)
+"What happen!!! My app is showing nothing!! this is s*cks!!!" Don't let our user swearing like that! So provide the error information to them! *Ups.. I mean "to them."
+
+5. 
