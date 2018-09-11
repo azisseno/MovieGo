@@ -9,7 +9,7 @@ This project is built in clean architecture with SOLID Principle.
 ## Architecture
 Everyone is comparing architectures, but that's not what people should do. As far as I can see, an MVP is good for a small app with a few screens. But let's take a look to the assignment number two **Maintainability**
 
-![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/Maintainability.png)
+![enter image description here](Resources/Maintainability.png)
 
 Let's assume that this project will be real big project. Then yes! the real problem starts if your app grows and more and more components get into the game. So I choose Viper as a design pattern for this project to achieve this requirement.
 
@@ -57,22 +57,22 @@ Yes, I use **In Memory** type of core data to do unit testing because I dont wan
 **Structures**
 
 Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieGo into 4 main folders.
-![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/MovieGoFoldering.png)
+![enter image description here](Resources/MovieGoFoldering.png)
  1. **Application** - All about application level management (AppDelegate). Why ? it's only 1 class! Okay, let's take a look to all methods inside AppDelegate, this is super complex.. You may add remote notification handler, setup key, user activity handler, and a lot more complexity in the real world. So yaps. preparing for the complexity from a very beginning is not a crime :)
  2. **Core** - This folder is to accomodate helpers, managers, global constants, or we may say base type stuff!!
  3. **Modules** - The modules in the target (the apps itself)
  4. **Resources** - All about target resources without 3 classifications above :D
- 5. **Views** - The more engineers and designers we have, the more unconsistent design we would have <span style="color:red">(IF WE DON'T HAVE GOOD PRODUCT DESIGN PRINCIPLE)</span>. Yaps in this case, I adopt one of principle from [atomic design](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=2&cad=rja&uact=8&ved=2ahUKEwjVuNqfwK_dAhVBQH0KHcF2A4MQFjABegQIBxAB&url=http://atomicdesign.bradfrost.com/&usg=AOvVaw32gtwaq63j-VXtSOmbbclN) by brad forst.  `Every single view should be reusable`.  So that, I group all views in the one place
+ 5. **Views** - The more engineers and designers we have, the more unconsistent design we would have <span style="color:red">(IF WE DON'T HAVE GOOD PRODUCT DESIGN PRINCIPLE)</span>. Yaps in this case, I adopt one of principle from [atomic design](http://atomicdesign.bradfrost.com) by brad forst.  `Every single view should be reusable`.  So that, I group all views in the one place
 ---
 **Highlighted Code Snippet**
 
 Why I made `BaseTableViewController` ? Yaps, it's a part of my sense of long term vision. Have you ever think that someday business requirement changes our app radically? So .... instead of doing massive refactoring with copy paste stuff, why don't we prepare a base controller to simplify our job? Of course! since it's only for an assignment, I only create 1 base controllers. But in the real life, we should *"Base-rized"* all of controllers
 
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/setSearch.png)
+](Resources/setSearch.png)
 Why use a builder callback for a `SearchResultsViewController` while we may use direct assign to our `UISearchController` ? In SOLID Principle, we have to separate responsibility of each class. There is `Router` that responsible to routing stuff.
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/implementationSetSearch.png)
+](Resources/implementationSetSearch.png)
 
 Find out `UIColor.swift`  and `UIFont.swift` files and you may be amazed why do I made this overkill stuff just for 1 - 2 kinds of them. The answer is as easy as the previous one, it would be very easy to refactor someday.
 
@@ -87,22 +87,33 @@ Implementing SOLID principle with VIPER, make us easier to increase our unit tes
 Finally, I reach this part :D. In general, I use iOS standard user interface to solve this assessment. But my background is Core Design Squad, so the UI should work for you as well :D. 
 1. Initial Screen
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/EmptyHome.png)
+](Resources/EmptyHome.png)
 It is fun, I use purely iOS elements to build this app including the welcome part :D
 
 2. Searching Screen
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/Searching.png)
+](Resources/Searching.png)
 Okay, wait! Don't let our user wait with no information. So let them know what they waiting for.
 
 3. Movie List Screen
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/List.png)
+](Resources/List.png)
 Voila! the movies you are looking for are on the list
 
 4. Error Screen
 ![
-](https://github.com/azisseno/MovieGo/blob/master/Resources/NotFound.png)
+](Resources/NotFound.png)
 "What happen!!! My app is showing nothing!! this is s*cks!!!" Don't let our user swearing like that! So provide the error information to them! *Ups.. I mean "to them."
 
-5. 
+5. Toast Warning
+![enter image description here](Resources/Toast.png)
+
+Most user dont like disturbing alert, so just let them know in the elegant way.
+***
+Huft.. That'all my explanation about my assessment, It was exausting but very fun. Hope this match your expectation.
+
+Ahh yah.. about **UI Test**. Wait! It's only a week and don't we have a software engineer in test nowadays :D. Thanks! good luck for me..
+
+
+Best,
+Azisseno
