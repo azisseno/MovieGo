@@ -92,28 +92,32 @@ ___
 
 ## User Experience Overview
 Finally, I reach this part :D. In general, I use iOS standard user interface to solve this assessment. But my background is Core Design Squad, so the UI should work for you as well :D. 
-1. Initial Screen
-![
-](Resources/EmptyHome.png)
+
+**1. Initial Screen**
+
+![Initial](Resources/EmptyHome.png)
+
 It is fun, I use purely iOS elements to build this app including the welcome part :D
 
-2. Searching Screen
-![
-](Resources/Searching.png)
+**2. Searching Screen**
+
+![Searching](Resources/Searching.png)
+
 Okay, wait! Don't let our user wait with no information. So let them know what they waiting for.
 
-3. Movie List Screen
-![
-](Resources/List.png)
+**3. Movie List Screen**
+
+![Movie](Resources/List.png)
 Voila! the movies you are looking for are on the list
 
-4. Error Screen
-![
-](Resources/NotFound.png)
+**4. Error Screen**
+
+![not found](Resources/NotFound.png)
 "What happen!!! My app is showing nothing!! this is s*cks!!!" Don't let our user swearing like that! So provide the error information to them! *Ups.. I mean "to them."
 
-5. Toast Warning
-![enter image description here](Resources/Toast.png)
+**5. Toast Warning**
+
+![Toast](Resources/Toast.png)
 
 Most user dont like disturbing alert, so just let them know in the elegant way.
 ***
