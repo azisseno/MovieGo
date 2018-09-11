@@ -69,6 +69,8 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     func showErrorMessage(_ errorMessage: String) {
         showSnackAlert(message: errorMessage)
+        emptyState.setLabel(text: errorMessage,
+                            emoticon: "😔")
         refreshControl?.endRefreshing()
     }
 }
