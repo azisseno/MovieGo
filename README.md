@@ -105,4 +105,15 @@ Voila! the movies you are looking for are on the list
 ](https://github.com/azisseno/MovieGo/blob/master/Resources/NotFound.png)
 "What happen!!! My app is showing nothing!! this is s*cks!!!" Don't let our user swearing like that! So provide the error information to them! *Ups.. I mean "to them."
 
-5. 
+5. Toast Warning
+![enter image description here](https://github.com/azisseno/MovieGo/blob/master/Resources/Toast.png)
+
+Most user dont like disturbing alert, so just let them know in the elegant way.
+***
+Huft.. That'all my explanation about my assessment, It was exausting but very fun. Hope this match your expectation.
+
+Ahh yah.. about **UI Test**. Wait! It's only a week and don't we have a software engineer in test nowadays :D. Thanks! good luck for me..
+
+
+Best,
+Azisseno
