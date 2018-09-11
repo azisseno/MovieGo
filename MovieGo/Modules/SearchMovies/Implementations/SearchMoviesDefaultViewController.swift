@@ -21,9 +21,6 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     }()
     var presenter: SearchMoviesPresenter?
     let dataSource = MovieListDataSource()
-    private var totalPages: Int = 0
-    private var currentPages: Int = 0
-    private var totalResults: Int = 0
     
     //MARK: - SuperClass Methods
     override func viewDidLoad() {
@@ -34,7 +31,8 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setSearchBarOnNavigation(delegate: self)
+        setSearchBarOnNavigation(searchBarDelegate: self,
+                                 placeholder: "Find movie here ...")
     }
     
     //MARK: - Setup SubViews
@@ -50,22 +48,13 @@ class SearchMoviesDefaultViewController: BaseTableViewController, SearchMoviesVi
         refreshControl?.tintColor = .darkGray
     }
     
-    //MARK: - View handlers
-    func showNewListOfMovies(_ movies: [Movie], totalPages: Int, totalResults: Int) {
-        if totalResults <= 0 {
+    //MARK: - View handlers    
+    func showMovies(_ movies: [Movie]) {
+        if movies.count <= 0 {
             emptyState.setLabel(text: SearchMoviesConstant.notFoundText,
                                 emoticon: "😔")
         }
-        self.totalPages = totalPages
-        self.totalResults = totalResults
-        currentPages = 1
         dataSource.movies = movies
-        reloadData()
-    }
-    
-    func appendMovies(_ movies: [Movie]) {
-        dataSource.movies += movies
-        currentPages += 1
         reloadData()
     }
     
@@ -93,6 +82,8 @@ extension SearchMoviesDefaultViewController: UISearchBarDelegate {
             searchBar.resignFirstResponder()
         }
         dataSource.movies = []
+        emptyState.setLabel(text: SearchMoviesConstant.loadingText,
+                            emoticon: "🍿")
         tableView.reloadData()
         refreshControl?.beginRefreshing()
         presenter?.onTapSearchButton(keyword: searchBar.text ?? "")
@@ -107,18 +98,16 @@ extension SearchMoviesDefaultViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return totalResults > 0 ? 0 : tableView.frame.height * 0.6
+        return dataSource.movies.count > 0 ? 0 : tableView.frame.height * 0.6
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return totalResults > 0 ? nil : emptyState
+        return dataSource.movies.count > 0 ? nil : emptyState
     }
     
     //MARK: - UIScrollView Delegate
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if currentPages > 0,
-            currentPages <= totalPages,
-            scrollView.isReachingBottom() {
+        if scrollView.isReachingBottom() {
             presenter?.onReachBottomScroll()
         }
     }

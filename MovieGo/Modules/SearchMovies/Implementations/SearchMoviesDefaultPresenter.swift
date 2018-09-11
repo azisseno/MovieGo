@@ -11,6 +11,9 @@ import Api
 
 class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
     
+    private var moviesFound: [Movie] = []
+    private var currentResponse: MovieResponse?
+
     var router: SearchMoviesRouter?
     var interactor: SearchMoviesInteractor?
     weak var view: SearchMoviesViewController?
@@ -28,13 +31,14 @@ class SearchMoviesDefaultPresenter: SearchMoviesPresenter {
     }
     
     func handleSuccessRequest(response: MovieResponse) {
-        if response.page > 1 {
-            view?.appendMovies(response.results)
+        if let currentResponse = currentResponse,
+            response.page > currentResponse.page {
+            moviesFound += response.results
         } else {
-            view?.showNewListOfMovies(response.results,
-                                      totalPages: response.total_pages,
-                                      totalResults: response.total_results)
+            moviesFound = response.results
         }
+        currentResponse = response
+        view?.showMovies(moviesFound)
     }
 
     func handleErrorRequest(response: ErrorResponse) {

@@ -12,12 +12,16 @@ import Foundation
 struct SearchMoviesConstant {
 
     static let notFoundText: String = """
-                                        Seems like the movies your looking
+                                        Seems like, the movies you're looking
                                         for are not available here
                                         """
     static let initialText: String = """
                                         Hi, Welcome to Movie Go!!!
                                         You can find billions movie around the worlds !!
+                                        """
+    static let loadingText: String = """
+                                        Finding some movies . . .
+                                        Please wait, we are working hard to find you some movies !!
                                         """
 
 }

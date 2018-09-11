@@ -52,18 +52,17 @@ do {
 let moduleUrl = workUrl.appendingPathComponent(module)
 let interfacesUrl = moduleUrl.appendingPathComponent("Interfaces")
 let implmentationsUrl = moduleUrl.appendingPathComponent("Implementations")
-let defaultUrl = implmentationsUrl
 
 let interfaceRouterUrl = interfacesUrl.appendingPathComponent(module+"Router").appendingPathExtension("swift")
 let interfacePresenterUrl = interfacesUrl.appendingPathComponent(module+"Presenter").appendingPathExtension("swift")
 let interfaceInteractorUrl = interfacesUrl.appendingPathComponent(module+"Interactor").appendingPathExtension("swift")
 let interfaceViewControllerUrl = interfacesUrl.appendingPathComponent(module+"ViewController").appendingPathExtension("swift")
 
-let defaultBuilderUrl = defaultUrl.appendingPathComponent(module+"DefaultBuilder").appendingPathExtension("swift")
-let defaultRouterUrl = defaultUrl.appendingPathComponent(module+"DefaultRouter").appendingPathExtension("swift")
-let defaultPresenterUrl = defaultUrl.appendingPathComponent(module+"DefaultPresenter").appendingPathExtension("swift")
-let defaultInteractorUrl = defaultUrl.appendingPathComponent(module+"DefaultInteractor").appendingPathExtension("swift")
-let defaultViewControllerUrl = defaultUrl.appendingPathComponent(module+"DefaultViewController").appendingPathExtension("swift")
+let defaultBuilderUrl = implmentationsUrl.appendingPathComponent(module+"DefaultBuilder").appendingPathExtension("swift")
+let defaultRouterUrl = implmentationsUrl.appendingPathComponent(module+"DefaultRouter").appendingPathExtension("swift")
+let defaultPresenterUrl = implmentationsUrl.appendingPathComponent(module+"DefaultPresenter").appendingPathExtension("swift")
+let defaultInteractorUrl = implmentationsUrl.appendingPathComponent(module+"DefaultInteractor").appendingPathExtension("swift")
+let defaultViewControllerUrl = implmentationsUrl.appendingPathComponent(module+"DefaultViewController").appendingPathExtension("swift")
 
 func fileComment(for module: String, type: String) -> String {
     let today = Date()
@@ -226,7 +225,7 @@ class \(module)DefaultViewController: \(controllerType), \(module)ViewController
 
 
 do {
-    try [moduleUrl, interfacesUrl, implmentationsUrl, defaultUrl].forEach {
+    try [moduleUrl, interfacesUrl, implmentationsUrl, implmentationsUrl].forEach {
         try fileManager.createDirectory(at: $0, withIntermediateDirectories: true, attributes: nil)
     }
 
