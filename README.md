@@ -1,6 +1,7 @@
 
 
 
+
 # MovieGo
 
 MovieGo is the codename of this project :D
@@ -37,21 +38,26 @@ Here is **ModuleGenerator.swift** on the project. Just fire it up with this comm
 It'll generate a module template with the given name in the current directory.
 
 ## Api Target Overview
+
 **Purpose**
+
 Separating Api Target from the **monolitic app** for me is great idea. Api have versioning stuff and following it is such a hell. Sometimes **(really often in real life)**  1 application need to call different version of Endpoint, so instead of maintain the helper class, we can just create 1 target for 1 version of Api. This strategy also accomodate the adaption of changing of our api, if we need to change all or some of our endpoint, you know what should we do without messing up another stuff.
----
+
 **Unit Test**
 
 Api is the most important element in the app, so the unit test strategy here is doing real call once and stub the rest. Api stubbing also has a strategy, we have to make sure we mock and stub our api base on the documentation. For me? Okay I don't have the documentation so my strategy was call all posibility response from 1 endpoint you gave me and put it on my **Unit Test**.
+
 ___
 ## Storage Target Overview
 **Purpose**
 
 Okay a lot of features are comming in for iOS,  that's why we need to have our seperated storage management just in case we would change our Database system. You may say, we can still do this (change database system) on our main app but, **Can you imagine the conflicts ?** and **How many line of code would be affected by this ?**. So with separating target, we can only change our internal target code without messing up the public api.
-___
+
 **Unit Test**
+
 Yes, I use **In Memory** type of core data to do unit testing because I dont want to mess up my current saved data. The purposes of unit test here are knowing CRUD function works perfectly and syncronusly.
 ___
+
 ## MovieGo Target Overview
 
 **Structures**
@@ -63,25 +69,26 @@ Okay, let's take a look the foldering stuff of MovieGo target. I seperate MovieG
  3. **Modules** - The modules in the target (the apps itself)
  4. **Resources** - All about target resources without 3 classifications above :D
  5. **Views** - The more engineers and designers we have, the more unconsistent design we would have <span style="color:red">(IF WE DON'T HAVE GOOD PRODUCT DESIGN PRINCIPLE)</span>. Yaps in this case, I adopt one of principle from [atomic design](http://atomicdesign.bradfrost.com) by brad forst.  `Every single view should be reusable`.  So that, I group all views in the one place
----
+
+
 **Highlighted Code Snippet**
 
 Why I made `BaseTableViewController` ? Yaps, it's a part of my sense of long term vision. Have you ever think that someday business requirement changes our app radically? So .... instead of doing massive refactoring with copy paste stuff, why don't we prepare a base controller to simplify our job? Of course! since it's only for an assignment, I only create 1 base controllers. But in the real life, we should *"Base-rized"* all of controllers
 
-![
-](Resources/setSearch.png)
+![](Resources/setSearch.png)
 Why use a builder callback for a `SearchResultsViewController` while we may use direct assign to our `UISearchController` ? In SOLID Principle, we have to separate responsibility of each class. There is `Router` that responsible to routing stuff.
-![
-](Resources/implementationSetSearch.png)
+![](Resources/implementationSetSearch.png)
 
 Find out `UIColor.swift`  and `UIFont.swift` files and you may be amazed why do I made this overkill stuff just for 1 - 2 kinds of them. The answer is as easy as the previous one, it would be very easy to refactor someday.
 
 Separating `DataSource` file ? Okay we all know that `UITableView DataSource` is data that related to View and we may put it on the view. But.... in Single Responsible principle (**S**OLID), we every class has single type of responsibility.. That's why I separate `DataSource` in a class.
-***
+
 
 **Unit Test**
+
 Implementing SOLID principle with VIPER, make us easier to increase our unit testing coverage. Okay for the first step, if we are run out of time, just make sure we are testing our `Interactor` because it responsible to "business logic".  We can also mock each of our components to test the real one. For example`MockInteractor` , `MockViewController` to test `Presenter`. For me? Sure! I do run out of time, so I just test the `Interactor` component of the module :D.
-***
+
+___
 
 ## User Experience Overview
 Finally, I reach this part :D. In general, I use iOS standard user interface to solve this assessment. But my background is Core Design Squad, so the UI should work for you as well :D. 
@@ -112,7 +119,7 @@ Most user dont like disturbing alert, so just let them know in the elegant way.
 ***
 Huft.. That'all my explanation about my assessment, It was exausting but very fun. Hope this match your expectation.
 
-Ahh yah.. about **UI Test**. Wait! It's only a week dude!! Ahh Don't we have a software engineer in test nowadays :D. Thanks! good luck for me..
+Ahh yah.. about **UI Test**. Wait! It's only a week dude!! And don't we have a software engineer in test nowadays :D. Haha nevermind, Thanks! good luck for me..
 
 
 Best,
