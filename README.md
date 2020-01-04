@@ -8,9 +8,7 @@ MovieGo is the codename of this project :D
 This project is built in clean architecture with SOLID Principle. 
 
 ## Architecture
-Everyone is comparing architectures, but that's not what people should do. As far as I can see, an MVP is good for a small app with a few screens. But let's take a look to the assignment number two **Maintainability**
-
-![enter image description here](Resources/Maintainability.png)
+Everyone is comparing architectures, but that's not what people should do. As far as I can see, an MVP is good for a small app with a few screens. 
 
 Let's assume that this project will be real big project. Then yes! the real problem starts if your app grows and more and more components get into the game. So I choose Viper as a design pattern for this project to achieve this requirement.
 
@@ -124,11 +122,6 @@ Voila! the movies you are looking for are on the list
 ![Toast](Resources/Toast.png)
 
 
-Most user dont like disturbing alert, so just let them know in the elegant way.
-***
-Huft.. That'all my explanation about my assessment, It was exausting but very fun. Hope this match your expectation.
-
-Ahh yah.. about **UI Test**. Wait! It's only a week dude!! And don't we have a software engineer in test nowadays :D. Haha nevermind, Thanks! good luck for me..
 
 
 Best,
